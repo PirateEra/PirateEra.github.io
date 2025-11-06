@@ -1,13 +1,16 @@
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
 }
 
 .project-card {
+  flex: 1 1 280px;
+  max-width: 300px;
   display: block;
   border-radius: 12px;
   overflow: hidden;
