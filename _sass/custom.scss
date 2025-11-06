@@ -1,15 +1,16 @@
 .project-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
 }
 
 .project-card {
-  flex: 0 0 300px;
+  flex: 1 1 30%;
+  max-width: 300px;
   display: block;
   border-radius: 12px;
   overflow: hidden;
