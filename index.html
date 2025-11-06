@@ -3,4 +3,22 @@ layout: single
 author_profile: false
 ---
 
-<h1>Hi, I am {{ site.author.name }} This is a test</h1>
+<div style="text-align: center;">
+  <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" style="width:150px; border-radius:50%; margin-bottom:1rem;">
+
+  <h1>Hi, I am {{ site.author.name }}</h1>
+  <p><em>{{ site.author.location }}</em></p>
+
+  <p>{{ site.author.bio | markdownify }}</p>
+
+  <p>
+    {% for link in site.author.links %}
+      {% if link.url %}
+        <a href="{{ link.url }}" target="_blank">
+          <i class="{{ link.icon }}"></i> {{ link.label }}
+        </a>
+        {% unless forloop.last %} · {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </p>
+</div>
