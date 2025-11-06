@@ -1,0 +1,14 @@
+- title: "Pirate Era"
+  description: "An MMORPG built inside Minecraft"
+  image: "/assets/images/projects/pirate-era.jpg"
+  url: "/projects/pirate-era/"
+
+- title: "Mock project"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock.jpg"
+  url: "/projects/mock project/"
+
+- title: "Mock project two"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock.jpg"
+  url: "/projects/mock project/"

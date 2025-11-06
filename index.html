@@ -23,3 +23,20 @@ author_profile: false
     {% endfor %}
   </p>
 </div>
+
+<hr style="margin: 3rem auto; width: 60%;">
+
+<h2 style="text-align: center; margin-bottom: 1rem;">Highlighted Projects</h2>
+
+<div class="project-grid">
+  {% for project in site.data.projects limit:3 %}
+  <a href="{{ project.url }}" class="project-card">
+    <img src="{{ project.image }}" alt="{{ project.title }}">
+    <div class="project-info">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
