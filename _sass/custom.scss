@@ -1,11 +1,6 @@
 .project-grid-wrapper {
   width: 100%;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: var(--background-color, #fff);
+  margin: auto;
   padding: 3rem 0;
 }
 
