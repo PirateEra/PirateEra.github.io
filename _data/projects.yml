@@ -5,10 +5,10 @@
 
 - title: "Mock project"
   description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.jpg"
+  image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
 
 - title: "Mock project two"
   description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.jpg"
+  image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
