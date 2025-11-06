@@ -4,9 +4,9 @@ main:
     url: https://pirateera.github.io/"
   - title: "Highlights"
     url: https://pirateera.github.io/
-  - title: "About"
-    url: https://pirateera.github.io/
   - title: "Projects"
+    url: https://pirateera.github.io/
+  - title: "About me"
     url: https://pirateera.github.io/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
