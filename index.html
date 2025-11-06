@@ -26,9 +26,9 @@ author_profile: false
 
 <hr style="margin: 3rem auto; width: 60%;">
 
-<h2 style="text-align: center; margin-bottom: 1rem;">Highlighted Projects</h2>
+<section id="highlights" class="project-grid-wrapper">
+  <h2 style="text-align: center; margin-bottom: 1rem;">Highlighted Projects</h2>
 
-<div class="project-grid-wrapper">
   <div class="project-grid">
     {% for project in site.data.projects limit:3 %}
     <a href="{{ project.url }}" class="project-card">
@@ -40,5 +40,5 @@ author_profile: false
     </a>
     {% endfor %}
   </div>
-</div>
+</section>
 

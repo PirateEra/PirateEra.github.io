@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "Home"
-    url: https://pirateera.github.io/"
+    url: /
   - title: "Highlights"
-    url: https://pirateera.github.io/
+    url: /#highlights
   - title: "Projects"
     url: https://pirateera.github.io/
   - title: "About me"
