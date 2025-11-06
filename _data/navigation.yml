@@ -5,9 +5,9 @@ main:
   - title: "Highlights"
     url: /#highlights
   - title: "Projects"
-    url: https://pirateera.github.io/
+    url: https://pirateera.github.io/projects/
   - title: "About me"
-    url: https://pirateera.github.io/
+    url: https://pirateera.github.io/aboutme/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
