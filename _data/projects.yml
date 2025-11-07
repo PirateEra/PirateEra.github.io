@@ -24,14 +24,17 @@
     Building System:
       - "Created a modular building system"
       - "Allowed to create and build houses in a block based setting"
+  code_snippets_title: Code Samples
   code_snippets:
-    - |
+    - title: "C# example"
+      content: |
       ```csharp
       void Update() {
         if (Input.GetKey(KeyCode.Space)) Jump();
       }
       ```
-    - |
+    - title: "Python example"
+      content: |
       ```python
       def example_code(speed):
           print(f"Moving at {speed} speed!")

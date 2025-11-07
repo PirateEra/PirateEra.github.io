@@ -53,15 +53,17 @@ layout: default
   {% if project.code_snippets %}
     <div class="code-snippets">
       <h2>Code Samples</h2>
-      <div class="snippet-viewer">
-        {% for snippet in project.code_snippets %}
-          <div class="snippet {% if forloop.first %}active{% endif %}">
-            {{ snippet | markdownify }}
+      <button class="snippet-prev">&#8592;</button>
+      <button class="snippet-next">&#8594;</button>
+    
+      {% for snippet in project.code_snippets %}
+        <div class="snippet">
+          <h3 class="snippet-title">{{ snippet.title }}</h3>
+          <div class="snippet-content">
+            {{ snippet.content | markdownify }}
           </div>
-        {% endfor %}
-        <button class="snippet-prev">&#8592;</button>
-        <button class="snippet-next">&#8594;</button>
-      </div>
+        </div>
+      {% endfor %}
     </div>
   {% endif %}
 
