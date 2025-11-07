@@ -37,7 +37,6 @@ layout: default
     </div>
   {% endif %}
 
-  {% assign project = site.data.projects[page.project_id] %}
   {% assign folder = project.presentation_folder %}
   {% assign slides = site.static_files | where_exp: "f", "f.path contains folder" | sort: "path" %}
   {% if slides.size > 0 %}
@@ -129,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const snippets = document.querySelectorAll(".snippet");
+  if (!snippets.length) return;
   let index = 0;
 
   snippets.forEach((s, i) => {

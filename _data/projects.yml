@@ -14,7 +14,7 @@
   project_pdf_title: "Report"
   project_pdf: "/assets/pdfs/ATCS_Report.pdf"
   presentation_title: "example title"
-  presentation_folder: "/assets/slides/ai4mi"
+  presentation_folder: "/assets/slides/ai4mi/"
   media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
