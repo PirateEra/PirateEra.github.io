@@ -37,20 +37,24 @@ layout: default
     </div>
   {% endif %}
 
-  {% if project.presentation_pdf %}
-    <div class="project-pdf-slides">
-      <h2 class="presentation-title">{{ project.presentation_title | default: "Presentation" }}</h2>
-      <div class="pdf-viewer">
-        <canvas id="pdf-canvas"></canvas>
-        <div class="pdf-controls">
-          <button id="pdf-prev">&#8592; Prev</button>
-          <span id="pdf-page-info">1 / 1</span>
-          <button id="pdf-next">Next &#8594;</button>
-        </div>
+  {% assign folder = "assets/projects/hightide/slides/" %}
+  {% assign slides = site.static_files | where_exp: "f", "f.path contains folder" | sort: "path" %}
+  
+  {% if slides.size > 0 %}
+    <div class="project-presentation">
+      <h2>{{ project.presentation_title | default: "Presentation" }}</h2>
+    
+      <div class="slides-container">
+        {% for slide in slides %}
+          <img src="{{ slide.path }}" class="slide" {% if forloop.first %}style="display:block"{% else %}style="display:none"{% endif %}>
+        {% endfor %}
       </div>
-      <p>
-        <a href="{{ project.presentation_pdf }}" target="_blank" class="pdf-download-btn">Download PDF</a>
-      </p>
+    
+      <div class="slide-controls">
+        <button id="slide-prev">&#8592; Prev</button>
+        <span id="slide-info">1 / {{ slides.size }}</span>
+        <button id="slide-next">Next &#8594;</button>
+      </div>
     </div>
   {% endif %}
 
@@ -98,50 +102,30 @@ layout: default
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.4.149/pdf.min.mjs"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const url = "{{ project.presentation_pdf }}";
-  const canvas = document.getElementById('pdf-canvas');
-  const pageInfo = document.getElementById('pdf-page-info');
+  const slides = document.querySelectorAll(".slide");
+  if (!slides.length) return;
 
-  if (!url || !canvas || !pageInfo) return;
+  let index = 0;
+  const info = document.getElementById("slide-info");
 
-  const ctx = canvas.getContext('2d');
-  let pdfDoc = null, pageNum = 1;
-
-  const renderPage = num => {
-    pdfDoc.getPage(num).then(page => {
-      const viewport = page.getViewport({ scale: 1.5 });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      const renderCtx = { canvasContext: ctx, viewport: viewport };
-      page.render(renderCtx);
-
-      pageInfo.textContent = `${num} / ${pdfDoc.numPages}`;
-    });
+  const showSlide = i => {
+    slides.forEach((s, idx) => s.style.display = idx === i ? "block" : "none");
+    info.textContent = `${i + 1} / ${slides.length}`;
   };
 
-  pdfjsLib.getDocument(url).promise.then(doc => {
-    pdfDoc = doc;
-    renderPage(pageNum);
+  document.getElementById("slide-prev").addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
   });
 
-  document.getElementById('pdf-prev').addEventListener('click', () => {
-    if (pageNum <= 1) return;
-    pageNum--;
-    renderPage(pageNum);
-  });
-
-  document.getElementById('pdf-next').addEventListener('click', () => {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++;
-    renderPage(pageNum);
+  document.getElementById("slide-next").addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
   });
 });
 </script>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const snippets = document.querySelectorAll(".snippet");
