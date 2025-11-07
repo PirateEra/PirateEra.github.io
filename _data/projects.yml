@@ -45,7 +45,7 @@
   #       ```python
   #       def example_code(speed):
   #           print(f"Moving at {speed} speed!")
-        ```
+  #       ```
 
 - title: "Multimedia analytics"
   description: "Random mock project"
