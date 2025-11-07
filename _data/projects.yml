@@ -11,10 +11,10 @@
   url: "/pages/projects/hightide"
   tools: "Unity3D | C# | Two-man team"
   about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
-  project_pdf_title: "Report"
-  project_pdf: "/assets/pdfs/ATCS_Report.pdf"
-  presentation_title: "example title"
-  presentation_folder: "/assets/slides/ai4mi/"
+  # project_pdf_title: "Report"
+  # project_pdf: "/assets/pdfs/ATCS_Report.pdf"
+  # presentation_title: "example title"
+  # presentation_folder: "/assets/slides/ai4mi/"
   media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
@@ -31,20 +31,20 @@
     Building System:
       - "Created a modular building system"
       - "Allowed to create and build houses in a block based setting"
-  code_snippets_title: Code Samples
-  code_snippets:
-    - title: "C# example"
-      content: |
-        ```csharp
-        void Update() {
-          if (Input.GetKey(KeyCode.Space)) Jump();
-        }
-        ```
-    - title: "Python example"
-      content: |
-        ```python
-        def example_code(speed):
-            print(f"Moving at {speed} speed!")
+  # code_snippets_title: Code Samples
+  # code_snippets:
+  #   - title: "C# example"
+  #     content: |
+  #       ```csharp
+  #       void Update() {
+  #         if (Input.GetKey(KeyCode.Space)) Jump();
+  #       }
+  #       ```
+  #   - title: "Python example"
+  #     content: |
+  #       ```python
+  #       def example_code(speed):
+  #           print(f"Moving at {speed} speed!")
         ```
 
 - title: "Multimedia analytics"
