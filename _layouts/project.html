@@ -21,9 +21,9 @@ layout: default
     <p>{{ project.about }}</p>
   </div>
 
-  {% if project.videos %}
+  {% if project.media %}
     <div class="project-media">
-      {% for media in project.videos %}
+      {% for media in project.media %}
         {% if media contains 'youtube.com/watch?v=' %}
           {% assign embed_url = media | replace: 'watch?v=', 'embed/' %}
           <iframe src="{{ embed_url }}" frameborder="0" allowfullscreen></iframe>
