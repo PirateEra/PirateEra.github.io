@@ -3,10 +3,38 @@
   image: "/assets/images/projects/pirate-era/pirate-era-project.png"
   url: "/projects/pirate-era/"
 
-- title: "High Tide"
+- id: hightide
+  title: "High Tide"
   description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
   image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+  url: "/pages/projects/hightide/"
+  tools: "Unity3D | C# | Two-man team"
+  about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
+  videos:
+    - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
+    - "https://www.youtube.com/watch?v=vE84TJUep0Y"
+  contributions:
+    Character Controller:
+      - "Implemented movement and camera system"
+      - "Added sprinting and crouching mechanics"
+    Animation Controller:
+      - "Integrated state-based animation system"
+      - "Synced animation transitions with gameplay logic"
+    Building System:
+      - "Created a modular building system"
+      - "Allowed to create and build houses in a block based setting"
+  code_snippets:
+    - |
+      ```csharp
+      void Update() {
+        if (Input.GetKey(KeyCode.Space)) Jump();
+      }
+      ```
+    - |
+      ```python
+      def example_code(speed):
+          print(f"Moving at {speed} speed!")
+      ```
 
 - title: "Multimedia analytics"
   description: "Random mock project"

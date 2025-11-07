@@ -1,0 +1,54 @@
+---
+layout: single
+---
+
+{% assign project = site.data.projects | where: "id", page.project_id | first %}
+
+<div class="project-page">
+
+  <div class="project-header">
+    {% if project.image %}
+      <img src="{{ project.image }}" alt="{{ project.title }}" class="project-logo">
+    {% else %}
+      <h1>{{ project.title }}</h1>
+    {% endif %}
+    <p class="project-subtitle">{{ project.description }}</p>
+  </div>
+
+  <div class="project-about">
+    <h2>About {{ project.title }}</h2>
+    <p class="project-tools">{{ project.tools }}</p>
+    <p>{{ project.about }}</p>
+  </div>
+
+  {% if project.videos %}
+  <div class="project-videos">
+    {% for vid in project.videos %}
+      <iframe width="360" height="200" src="{{ vid }}" frameborder="0" allowfullscreen></iframe>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="project-contributions">
+    <h2>My Contributions</h2>
+    {% for category, items in project.contributions %}
+      <h3>{{ category }}</h3>
+      <ul>
+        {% for item in items %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+
+  {% if project.code_snippets %}
+  <div class="code-snippets">
+    <h2>Code Samples</h2>
+    {% for snippet in project.code_snippets %}
+      <div class="snippet">
+        {{ snippet | markdownify }}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
