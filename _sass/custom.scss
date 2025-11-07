@@ -152,6 +152,28 @@ html {
   background: #005fa3;
 }
 
+.pdf-download-btn {
+  background: #007acc;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-block;
+}
+.pdf-download-btn:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+.pdf-download-btn:active {
+  background: #004a82;
+  transform: translateY(0);
+}
+.pdf-download-btn:focus {
+  outline: 2px solid #005fa3;
+  outline-offset: 2px;
+}
+
 .code-snippets {
   display: flex;
   flex-direction: column;
