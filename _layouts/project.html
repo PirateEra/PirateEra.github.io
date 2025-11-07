@@ -29,17 +29,16 @@ layout: default
   </div>
   {% endif %}
 
-  <div class="project-contributions">
-    <h2>My Contributions</h2>
-    {% for category, items in project.contributions %}
-      <h3>{{ category }}</h3>
-      <ul>
-        {% for item in items %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endfor %}
-  </div>
+  {% for contribution in project.contributions %}
+    {% assign category = contribution[0] %}
+    {% assign items = contribution[1] %}
+    <h3>{{ category }}</h3>
+    <ul>
+      {% for item in items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 
   {% if project.code_snippets %}
   <div class="code-snippets">
