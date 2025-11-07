@@ -37,6 +37,22 @@ layout: default
     </div>
   {% endif %}
 
+  {% if project.presentation_pdf %}
+    <div class="project-pdf-slides">
+      <h2>{{ project.presentation_title | default: "Presentation" }}</h2>
+      <canvas id="pdf-canvas"></canvas>
+      <div class="pdf-controls">
+        <button id="pdf-prev">&#8592; Prev</button>
+        <span id="pdf-page-info">1 / 1</span>
+        <button id="pdf-next">Next &#8594;</button>
+      </div>
+      <p>
+        <a href="{{ project.presentation_pdf }}" target="_blank" class="pdf-download-btn">Download PDF</a>
+      </p>
+    </div>
+  {% endif %}
+
+
   {% if project.project_pdf %}
     <div class="project-pdf">
       <h2 style="margin-bottom: 1rem;">{{ project.project_pdf_title | default: "Research Report" }}</h2>

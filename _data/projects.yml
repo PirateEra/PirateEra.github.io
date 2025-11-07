@@ -13,6 +13,8 @@
   about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
   project_pdf_title: "Report"
   project_pdf: "/assets/pdfs/ATCS_Report.pdf"
+  presentation_title: "example title"
+  presentation_path: "/assets/slides/ai4mi.pdf"
   media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
@@ -78,6 +80,11 @@
   url: "/projects/mock project/"
 
 - title: "Raytracing Project"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Bsc Thesis"
   description: "Random mock project"
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
