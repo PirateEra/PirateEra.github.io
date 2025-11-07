@@ -1,14 +1,49 @@
 - title: "Pirate Era"
-  description: "An MMORPG built inside Minecraft"
+  description: "Owner of an MMORPG built inside Minecraft"
   image: "/assets/images/projects/pirate-era/pirate-era-project.png"
   url: "/projects/pirate-era/"
 
-- title: "Mock project"
+- title: "High Tide"
+  description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Multimedia analytics"
   description: "Random mock project"
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
 
-- title: "Mock project two"
+- title: "ACTS"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Affiliate Robot"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Deep Learning 2"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "AI for Medical Imaging"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Leren en Beslissen"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Earth Shader Project"
+  description: "Random mock project"
+  image: "/assets/images/projects/mock/mockimg.png"
+  url: "/projects/mock project/"
+
+- title: "Raytracing Project"
   description: "Random mock project"
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
