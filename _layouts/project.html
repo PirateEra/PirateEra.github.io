@@ -99,6 +99,7 @@ layout: default
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const url = "{{ project.presentation_pdf }}";
+  if (!url) return;
   let pdfDoc = null, pageNum = 1;
 
   const canvas = document.getElementById('pdf-canvas');
