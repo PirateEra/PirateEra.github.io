@@ -95,7 +95,47 @@ layout: default
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.313/pdf.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const url = "{{ project.presentation_pdf }}";
+  let pdfDoc = null, pageNum = 1;
 
+  const canvas = document.getElementById('pdf-canvas');
+  const ctx = canvas.getContext('2d');
+  const pageInfo = document.getElementById('pdf-page-info');
+
+  const renderPage = num => {
+    pdfDoc.getPage(num).then(page => {
+      const viewport = page.getViewport({ scale: 1.5 });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      const renderCtx = { canvasContext: ctx, viewport: viewport };
+      page.render(renderCtx);
+
+      pageInfo.textContent = `${num} / ${pdfDoc.numPages}`;
+    });
+  };
+
+  pdfjsLib.getDocument(url).promise.then(doc => {
+    pdfDoc = doc;
+    renderPage(pageNum);
+  });
+
+  document.getElementById('pdf-prev').addEventListener('click', () => {
+    if (pageNum <= 1) return;
+    pageNum--;
+    renderPage(pageNum);
+  });
+
+  document.getElementById('pdf-next').addEventListener('click', () => {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++;
+    renderPage(pageNum);
+  });
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const snippets = document.querySelectorAll(".snippet");
