@@ -6,7 +6,7 @@
 - id: hightide
   title: "High Tide"
   description: "Co-Owner of a multiplayer survival game in Unity3D set in a medieval world."
-  image: "/assets/images/projects/mock/mockimg.png"
+  image: "/assets/images/hightide_cover.png"
   url: "/pages/projects/hightide"
   tools: "Unity3D | C# | Networking | MySQL | Multiplayer"
   about: |
