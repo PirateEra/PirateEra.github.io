@@ -4,17 +4,13 @@
   url: "/projects/pirate-era/"
 
 - id: hightide
-  # logo: "/assets/images/projects/mock/mockimg.png"
   title: "High Tide"
-  description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
+  description: "Co-Owner of a multiplayer survival game in Unity3D set in a medieval world."
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/pages/projects/hightide"
-  tools: "Unity3D | C# | Two-man team"
-  about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
-  # project_pdf_title: "Report"
-  # project_pdf: "/assets/pdfs/ATCS_Report.pdf"
-  # presentation_title: "example title"
-  # presentation_folder: "/assets/slides/ai4mi/"
+  tools: "Unity3D | C# | Networking | MySQL | Multiplayer"
+  about: |
+    High Tide was a self-started online multiplayer survival game co-developed with a friend. Players built castles and competed on official servers. The world underwent server wipes triggered by an incoming tide, forcing naval combat during these events. The project spanned 18-24 months and was my first serious game project, where I gained deep experience in Unity3D, networking, and gameplay systems.
   media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
@@ -23,14 +19,43 @@
     - "/assets/videos/hightide_fighting.mp4"
   contributions:
     Character Controller:
-      - "Implemented movement and camera system"
-      - "Added sprinting and crouching mechanics"
-    Animation Controller:
-      - "Integrated state-based animation system"
-      - "Synced animation transitions with gameplay logic"
+      - "Developed a 3D character controller capable of multiple stances: passive, fighting, weapon-specific stances, swimming."
+      - "Implemented smooth stance switching and animation blending for gameplay fluidity."
     Building System:
-      - "Created a modular building system"
-      - "Allowed to create and build houses in a block based setting"
+      - "Created a modular building system using block shapes with smart snapping for correct materials."
+      - "Enabled players to construct structures in the world, saving them persistently on the server."
+    Networking & Multiplayer:
+      - "Implemented client-server architecture to sync player actions, bases, and inventories using MySQL."
+      - "Developed PVP mechanics allowing players to damage each other and interact dynamically in the world."
+
+# - id: hightide
+  # logo: "/assets/images/projects/mock/mockimg.png"
+  # title: "High Tide"
+  # description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
+  # image: "/assets/images/projects/mock/mockimg.png"
+  # url: "/pages/projects/hightide"
+  # tools: "Unity3D | C# | Two-man team"
+  # about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
+  # project_pdf_title: "Report"
+  # project_pdf: "/assets/pdfs/ATCS_Report.pdf"
+  # presentation_title: "example title"
+  # presentation_folder: "/assets/slides/ai4mi/"
+  # media:
+  #   - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
+  #   - "https://www.youtube.com/watch?v=vE84TJUep0Y"
+  #   - "/assets/videos/hightidebuildsystem.mp4"
+  #   - "/assets/videos/hightide_swimming.mp4"
+  #   - "/assets/videos/hightide_fighting.mp4"
+  # contributions:
+  #   Character Controller:
+  #     - "Implemented movement and camera system"
+  #     - "Added sprinting and crouching mechanics"
+  #   Animation Controller:
+  #     - "Integrated state-based animation system"
+  #     - "Synced animation transitions with gameplay logic"
+  #   Building System:
+  #     - "Created a modular building system"
+  #     - "Allowed to create and build houses in a block based setting"
   # code_snippets_title: Code Samples
   # code_snippets:
   #   - title: "C# example"
