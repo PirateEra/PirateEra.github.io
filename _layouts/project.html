@@ -30,6 +30,8 @@ layout: default
         {% elsif media contains 'youtu.be/' %}
           {% assign embed_url = media | replace: 'youtu.be/', 'youtube.com/embed/' %}
           <iframe src="{{ embed_url }}" frameborder="0" allowfullscreen></iframe>
+        {% elsif file.extname == ".mp4" %}
+          <video src="{{ media }}" controls muted></video>
         {% else %}
           <img src="{{ media }}" alt="{{ project.title }} media">
         {% endif %}

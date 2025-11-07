@@ -18,6 +18,7 @@
   media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
+    - "assets/videos/hightidebuildsystem.mp4"
   contributions:
     Character Controller:
       - "Implemented movement and camera system"
