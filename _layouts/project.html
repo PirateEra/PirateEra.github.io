@@ -21,13 +21,22 @@ layout: default
     <p>{{ project.about }}</p>
   </div>
 
-  {% if project.videos %}
-  <div class="project-videos">
-    {% for vid in project.videos %}
-      <iframe width="360" height="200" src="{{ vid }}" frameborder="0" allowfullscreen></iframe>
-    {% endfor %}
-  </div>
+  {% if project.media %}
+    <div class="project-media">
+      {% for media in project.media %}
+        {% if media contains 'youtube.com' or media contains 'youtu.be' %}
+          <iframe
+            src="{{ media }}"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        {% else %}
+          <img src="{{ media }}" alt="{{ project.title }} media">
+        {% endif %}
+      {% endfor %}
+    </div>
   {% endif %}
+
 
   {% for contribution in project.contributions %}
     {% assign category = contribution[0] %}

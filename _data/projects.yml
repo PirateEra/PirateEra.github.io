@@ -11,7 +11,7 @@
   url: "/pages/projects/hightide"
   tools: "Unity3D | C# | Two-man team"
   about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
-  videos:
+  media:
     - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
     - "https://www.youtube.com/watch?v=vE84TJUep0Y"
   contributions:
