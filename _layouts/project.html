@@ -52,7 +52,7 @@ layout: default
 
   {% if project.code_snippets %}
     <div class="code-snippets">
-      <h2>Code Samples</h2>
+      <h2>project.code_snippets_title</h2>
       {% for snippet in project.code_snippets %}
         <div class="snippet">
           <h3 class="snippet-title">{{ snippet.title }}</h3>
@@ -73,6 +73,10 @@ layout: default
 document.addEventListener("DOMContentLoaded", () => {
   const snippets = document.querySelectorAll(".snippet");
   let index = 0;
+
+  snippets.forEach((s, i) => {
+    s.style.display = i === 0 ? 'block' : 'none';
+  });
 
   const showSnippet = (i) => {
     snippets.forEach((snip, idx) => snip.classList.toggle("active", idx === i));
