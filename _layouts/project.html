@@ -37,10 +37,9 @@ layout: default
     </div>
   {% endif %}
 
-  {% assign folder = "assets/projects/hightide/slides/" %}
+  {% assign project = site.data.projects[page.project_id] %}
+  {% assign folder = project.presentation_folder %}
   {% assign slides = site.static_files | where_exp: "f", "f.path contains folder" | sort: "path" %}
-  
-  {% if slides.size > 0 %}
     <div class="project-presentation">
       <h2>{{ project.presentation_title | default: "Presentation" }}</h2>
     
