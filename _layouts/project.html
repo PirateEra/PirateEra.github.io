@@ -21,21 +21,22 @@ layout: default
     <p>{{ project.about }}</p>
   </div>
 
-  {% if project.media %}
+  {% if project.videos %}
     <div class="project-media">
-      {% for media in project.media %}
-        {% if media contains 'youtube.com' or media contains 'youtu.be' %}
-          <iframe
-            src="{{ media }}"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+      {% for media in project.videos %}
+        {% if media contains 'youtube.com/watch?v=' %}
+          {% assign embed_url = media | replace: 'watch?v=', 'embed/' %}
+          <iframe src="{{ embed_url }}" frameborder="0" allowfullscreen></iframe>
+        {% elsif media contains 'youtu.be/' %}
+          {% assign embed_url = media | replace: 'youtu.be/', 'youtube.com/embed/' %}
+          <iframe src="{{ embed_url }}" frameborder="0" allowfullscreen></iframe>
         {% else %}
           <img src="{{ media }}" alt="{{ project.title }} media">
         {% endif %}
       {% endfor %}
     </div>
   {% endif %}
+
 
 
   {% for contribution in project.contributions %}
