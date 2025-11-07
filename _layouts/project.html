@@ -1,6 +1,5 @@
 ---
 layout: default
-classes: wide
 ---
 
 {% assign project = site.data.projects | where: "id", page.project_id | first %}
@@ -8,8 +7,8 @@ classes: wide
 <div class="project-page">
 
   <div class="project-header">
-    {% if project.image %}
-      <img src="{{ project.image }}" alt="{{ project.title }}" class="project-logo">
+    {% if project.logo %}
+      <img src="{{ project.logo }}" alt="{{ project.title }}" class="project-logo">
     {% else %}
       <h1>{{ project.title }}</h1>
     {% endif %}

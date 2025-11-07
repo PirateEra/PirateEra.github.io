@@ -4,6 +4,7 @@
   url: "/projects/pirate-era/"
 
 - id: hightide
+  # logo: "/assets/images/projects/mock/mockimg.png"
   title: "High Tide"
   description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
   image: "/assets/images/projects/mock/mockimg.png"
