@@ -182,4 +182,18 @@ html {
   right: 10px;
 }
 
+.snippet-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center; /* optional */
+}
+.snippet-content {
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
 

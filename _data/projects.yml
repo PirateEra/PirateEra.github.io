@@ -28,17 +28,17 @@
   code_snippets:
     - title: "C# example"
       content: |
-      ```csharp
-      void Update() {
-        if (Input.GetKey(KeyCode.Space)) Jump();
-      }
-      ```
+        ```csharp
+        void Update() {
+          if (Input.GetKey(KeyCode.Space)) Jump();
+        }
+        ```
     - title: "Python example"
       content: |
-      ```python
-      def example_code(speed):
-          print(f"Moving at {speed} speed!")
-      ```
+        ```python
+        def example_code(speed):
+            print(f"Moving at {speed} speed!")
+        ```
 
 - title: "Multimedia analytics"
   description: "Random mock project"
