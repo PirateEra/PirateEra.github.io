@@ -7,7 +7,7 @@
   title: "High Tide"
   description: "Co-Owner of a survival game made in Unity3D which sadly never launched"
   image: "/assets/images/projects/mock/mockimg.png"
-  url: "/pages/projects/hightide/"
+  url: "/pages/projects/hightide"
   tools: "Unity3D | C# | Two-man team"
   about: "High Tide is a Unity3D surival game. It plays off in a medieval setting where players build castles and compete with each other on official servers"
   videos:
