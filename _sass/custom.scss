@@ -128,31 +128,7 @@ html {
 }
 
 // POWERPOINT SLIDES
-.project-pdf-slides {
-  max-width: 80%;
-  margin: 2rem auto;
-  text-align: center;
-}
-#pdf-canvas {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-}
-.pdf-controls {
-  margin-top: 1rem;
-}
-.pdf-controls button {
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: none;
-  background: #007acc;
-  color: #fff;
-  cursor: pointer;
-}
-.pdf-controls button:hover {
-  background: #005fa3;
-}
+
 
 // PDF VIEWER
 .project-pdf {
