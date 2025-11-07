@@ -79,18 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const showSnippet = (i) => {
-    snippets.forEach((snip, idx) => snip.classList.toggle("active", idx === i));
+    snippets.forEach((snip, idx) => {
+      snip.style.display = idx === i ? 'block' : 'none';
+    });
   };
 
-  document.querySelector(".snippet-prev")?.addEventListener("click", () => {
-    index = (index - 1 + snippets.length) % snippets.length;
-    showSnippet(index);
-  });
+  snippets.forEach((snippet) => {
+    const prevBtn = snippet.querySelector(".snippet-prev");
+    const nextBtn = snippet.querySelector(".snippet-next");
 
-  document.querySelector(".snippet-next")?.addEventListener("click", () => {
-    index = (index + 1) % snippets.length;
-    showSnippet(index);
+    prevBtn?.addEventListener("click", () => {
+      index = (index - 1 + snippets.length) % snippets.length;
+      showSnippet(index);
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      index = (index + 1) % snippets.length;
+      showSnippet(index);
+    });
   });
 });
 </script>
+
 
