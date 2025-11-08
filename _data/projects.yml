@@ -131,7 +131,7 @@
       - "Applied dimensionality reduction techniques to visualize the constructed Task Embeddings and discover structure within different emotional classification corpora."
       - "Addressed challenges from diverse theoretical frameworks and varied, non-overlapping label sets across multiple emotional classification corpora."
   media:
-    - "/assets/images/atcs_poster.png"
+    - "/assets/images/atcs_poster.jpg"
 
 - title: "Affiliate Robot"
   description: "Random mock project"
