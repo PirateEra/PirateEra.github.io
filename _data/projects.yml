@@ -133,10 +133,30 @@
   media:
     - "/assets/images/atcs_poster.jpg"
 
-- title: "Affiliate Robot"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: affiliaterobot
+  date: "07-2023"
+  title: "Affiliate Robot"
+  description: "AI-driven web application (MVP) that automates the generation of affiliate marketing articles using web scraping, dynamic prompting, and the OpenAI API."
+  tools: "Python | PHP | OpenAI API | Web Scraping | HTML/CSS/JS"
+  about: "Developed the core logic for Affiliaterobot.nl, a Minimum Viable Product (MVP) aimed at automating content creation for affiliate marketers. The system generated 'Top X' style articles by dynamically gathering product data via web scraping and using prompt engineering to synthesize the information into a structured, engaging article format. The site integrated user-specific affiliate links for revenue generation."
+  image: "/assets/images/affiliate_robot_cover.png"
+  url: "/pages/projects/affiliate-robot/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/affiliaterobot.pdf"
+  contributions:
+    AI and Dynamic Prompt Engineering:
+      - "Authored the primary logic for the Article Generator, orchestrating the sequence from data acquisition to final LLM output."
+      - "Implemented dynamic prompt creation using web-scraped data to guide the OpenAI API in generating contextually rich and accurate 'Top 10' style articles."
+      - "Focused on prompt engineering to ensure the LLM output was structured correctly (e.g., using proper HTML) and aligned with the article's tone and format."
+    Full-Stack Backend Integration:
+      - "Developed a custom WordPress plugin in PHP to manage the entire back-end logic, including handling user input, and triggering the article generation process."
+      - "Integrated the Python web scraping module with the PHP back-end to seamlessly pass scraped product data for prompt construction."
+    Data Acquisition and Web Scraping:
+      - "Designed and implemented the Python web scraping module targeting Bol.com to efficiently gather real-time data (product names, descriptions, prices, etc.) for dynamic content."
+    Front-End Logic and MVP Development:
+      - "Implemented the core article generator functionality using a combination of HTML, CSS, JavaScript, and PHP to structure the final article presentation on the front-end, supporting the full MVP requirements (account/login, options)."
+  presentation_title: "Visual Interface Screenshots"
+  presentation_folder: "/assets/slides/affiliaterobot/"
 
 - title: "Deep Learning 2"
   description: "Random mock project"
