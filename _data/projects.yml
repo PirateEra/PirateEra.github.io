@@ -1,9 +1,11 @@
 - title: "Pirate Era"
+  date: "2019-Present"
   description: "Owner of an MMORPG built inside Minecraft"
   image: "/assets/images/projects/pirate-era/pirate-era-project.png"
   url: "/projects/pirate-era/"
 
 - id: hightide
+  date: "01-2017"
   title: "High Tide"
   description: "Co-Owner of a multiplayer survival game in Unity3D set in a medieval world."
   image: "/assets/images/hightide_cover.png"
@@ -74,6 +76,7 @@
   #       ```
 
 - id: graphunderstanding
+  date: "06-2025"
   title: "LLM Commentary for Graph Understanding"
   description: "Interactive graph visualization system to query graphs using natural language, providing LLM explanations and significance scores for query terms."
   tools: "Python | Dash | Plotly | Pandas | Ollama (Llama3.2:3b)"
@@ -104,10 +107,31 @@
   #   - /assets/images/projects/graphvisualisation/3.png
   #   - /assets/images/projects/graphvisualisation/1.png
 
-- title: "ACTS"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: "ood-generalization-transfer"
+  title: "ACTS"
+  date: "05-2025"
+  title: "OoD Prediction for Emotion Transfer"
+  description: "A transfer learning project using Task and Text Embeddings to predict model performance across different emotion classification datasets (Out-of-Distribution, OoD)."
+  tools: "Python | DeBERTaV3-base | Task Embeddings | Transfer Learning"
+  about: "The core challenge addressed is the difficulty of generalizing emotion classifiers across datasets due to varied labeling schemes. This project predicted the effectiveness of intermediate dataset transfer by building a regression model. The prediction variables were based on the similarity between datasets, quantified using class-conditional Task and Text Embeddings derived from gradient information, to determine which datasets serve as effective pre-training corpora."
+  image: "/assets/images/atcs.png"
+  url: "/pages/projects/ood-generalisation/"
+  github-link: https://github.com/PirateEra/ood-generalization-transfer
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/ATCS_Report.pdf"
+  contributions:
+    Transfer Learning and Model Prediction:
+      - "Designed a pipeline to predict transfer performance (OoD Generalization) between emotion datasets without requiring full model evaluation."
+      - "Fine-tuned a DeBERTaV3-base transformer encoder on 10 source emotion datasets in isolation to learn dataset-specific text representations."
+      - "Developed a regression model to predict transferability loss based on dataset similarity metrics."
+    Advanced Representation Learning:
+      - "Implemented the construction of Task Embeddings using the squared gradient norm of the frozen encoder to capture dataset-specific structure."
+      - "Created class-conditional representations for each emotion in each dataset, using both Task and Text Embeddings to quantify dataset similarity."
+    Data Analysis and Visualization:
+      - "Applied dimensionality reduction techniques to visualize the constructed Task Embeddings and discover structure within different emotional classification corpora."
+      - "Addressed challenges from diverse theoretical frameworks and varied, non-overlapping label sets across multiple emotional classification corpora."
+  media:
+    - "/assets/images/atcs_poster.png"
 
 - title: "Affiliate Robot"
   description: "Random mock project"
