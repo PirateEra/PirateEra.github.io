@@ -79,7 +79,7 @@
   tools: "Python | Dash | Plotly | Pandas | Ollama (Llama3.2:3b) | PCST-algorithm"
   about: "The system proposes an interactive, user-friendly visual interface that extends the G-Retriever architecture, allowing users to retrieve graphs using natural language queries. It enhances interpretability by providing comprehensive explanations from the LLM and offering phrase-level feedback (significance scores) on how influential noun, verb, and preposition phrases were in generating the resulting subgraph."
   image: "/assets/images/graph_cover.png"
-  url: "/projects/graphunderstanding/"
+  url: "/pages/projects/graphunderstanding/"
   github-link: https://github.com/PirateEra/Multimedia-Analytics
   project_pdf_title: "Research Report"
   project_pdf: "/assets/pdfs/Multimedia_Analytics_Report.pdf"
