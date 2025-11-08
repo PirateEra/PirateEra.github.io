@@ -107,7 +107,7 @@
   #   - /assets/images/projects/graphvisualisation/3.png
   #   - /assets/images/projects/graphvisualisation/1.png
 
-- id: "ood-generalization-transfer"
+- id: "ood-generalization"
   title: "ACTS"
   date: "05-2025"
   title: "OoD Prediction for Emotion Transfer"
