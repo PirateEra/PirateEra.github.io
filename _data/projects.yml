@@ -81,7 +81,7 @@
   image: "/assets/images/graph_cover.png"
   url: "/pages/projects/graphunderstanding/"
   github-link: https://github.com/PirateEra/Multimedia-Analytics
-  project_pdf_title: "Research Report"
+  project_pdf_title: "Technical Report"
   project_pdf: "/assets/pdfs/Multimedia_Analytics_Report.pdf"
   contributions:
     Interactive Interface Development:
