@@ -85,7 +85,7 @@
   url: "/pages/projects/graphunderstanding/"
   github-link: https://github.com/PirateEra/Multimedia-Analytics
   project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/Multimedia_Analytics_Report.pdf"
+  project_pdf: "/assets/pdfs/graphunderstanding.pdf"
   contributions:
     Interactive Interface Development:
       - "Developed an interactive and user-friendly visual system for natural language graph querying using Dash and Plotly."
@@ -118,7 +118,7 @@
   url: "/pages/projects/ood-generalisation/"
   github-link: https://github.com/PirateEra/ood-generalization-transfer
   project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/ATCS_Report.pdf"
+  project_pdf: "/assets/pdfs/ood-generalization.pdf"
   contributions:
     Transfer Learning and Model Prediction:
       - "Designed a pipeline to predict transfer performance (OoD Generalization) between emotion datasets without requiring full model evaluation."
@@ -158,10 +158,31 @@
   presentation_title: "Visual Interface Screenshots"
   presentation_folder: "/assets/slides/affiliaterobot/"
 
-- title: "Deep Learning 2"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: roger
+  title: "Robust AI-Generated Image Detection"
+  date: "05-2025"
+  description: "Developed ROGER, a robust, multi-modal model for AI-generated image detection that outperforms a state of the art model (SPAI) on augmented real-world images."
+  tools: "Python | PyTorch | Selenium | Deep Learning"
+  image: "/assets/images/roger_pipeline.png"
+  url: "/pages/projects/roger/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/roger.pdf"
+  github-link: https://github.com/PirateEra/ROGER
+  contributions:
+    Data Pipeline and Robustness Testing:
+      - "Contributed to creating challenging datasets that simulate real-world image modifications to test model robustness."
+      - "Specifically implemented the social media screenshot simulation dataset, using Selenium to dynamically inject images into a custom HTML template."
+      - "Randomized numerous dynamic HTML elements (like/comment counts, usernames, captions) to ensure each generated screenshot was unique."
+    Model Development (ROGER):
+      - "Co-developed the ROGER (RObust AI-GEnerated image Recognizer) model to address the weaknesses of SPAI."
+      - "Designed and implemented the integrated model approach, a multi-modal architecture combining three complementary AID models."
+      - "Extracted and concatenated embeddings from SPAI (spectral), RINE (mid-level), and PatchCraft (texture) into a unified 768-dimensional feature vector."
+      - "Trained the final MLP classification head (2-layer, 1536-unit) on the combined embeddings to produce a single, robust prediction."
+    Performance Evaluation:
+      - "Successfully reproduced the original SPAI paper's results, verifying its baseline performance and high reproducibility."
+      - "Demonstrated that the created ROGER model significantly outperforms the baseline SPAI on all four challenging real-world datasets."
+  media:
+    - "/assets/images/roger_pipeline.png"
 
 - title: "AI for Medical Imaging"
   description: "Random mock project"
