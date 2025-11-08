@@ -136,7 +136,7 @@
 - id: affiliaterobot
   date: "07-2023"
   title: "Affiliate Robot"
-  description: "AI-driven web application (MVP) that automates the generation of affiliate marketing articles using web scraping, dynamic prompting, and the OpenAI API."
+  description: "AI-driven web application that automates the generation of affiliate marketing articles using web scraping, dynamic prompting, and the OpenAI API."
   tools: "Python | PHP | OpenAI API | Web Scraping | HTML/CSS/JS"
   about: "Developed the core logic for Affiliaterobot.nl, a Minimum Viable Product (MVP) aimed at automating content creation for affiliate marketers. The system generated 'Top X' style articles by dynamically gathering product data via web scraping and using prompt engineering to synthesize the information into a structured, engaging article format. The site integrated user-specific affiliate links for revenue generation."
   image: "/assets/images/affiliate_robot_cover.png"
