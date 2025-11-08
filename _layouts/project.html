@@ -22,7 +22,8 @@ layout: default
   </div>
 
   {% if project.media %}
-    <div class="project-media">
+    {% assign media_count = project.media | size %}
+    <div class="project-media {% if media_count == 1 %}single-media{% endif %}">
       {% for media in project.media %}
         {% if media contains 'youtube.com/watch?v=' %}
           {% assign embed_url = media | replace: 'watch?v=', 'embed/' %}
