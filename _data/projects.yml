@@ -464,6 +464,7 @@
         ```
 
 - id: bounty-poster-system
+  noshow: true
   title: "Automatic Bounty Poster System"
   description: "A Python & Java system to auto-generate personalized 'One Piece' style bounty posters from player data and display them in-game."
   tools: "Python | Java | Denizen | Pillow | Web API"
@@ -519,6 +520,7 @@
         ```
 
 - id: custom-hud-shader
+  noshow: true
   title: "Vanilla Minecraft Custom HUD Shader"
   description: "A shader-based technique to render a custom, non-vanilla HUD in Minecraft by manipulating the font rendering pipeline."
   tools: "GLSL | Minecraft Shaders | Resource Packs"
