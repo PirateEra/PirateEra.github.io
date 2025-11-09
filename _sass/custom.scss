@@ -251,14 +251,14 @@ html {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: none;
-  background: #007acc;
+  background: #444444;
   color: #fff;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .slide-controls button:hover {
-  background: #005fa3;
+  background: #555555;
 }
 
 .slide-controls span {
@@ -281,7 +281,7 @@ html {
   height: 600px;
 }
 .project-pdf a {
-  background: #007acc;
+  background: #444444;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -289,11 +289,11 @@ html {
   transition: background 0.2s;
 }
 .project-pdf a:hover {
-  background: #005fa3;
+  background: #555555;
 }
 
 .pdf-download-btn {
-  background: #007acc;
+  background: #444444;
   color: #fff;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
@@ -302,15 +302,15 @@ html {
   display: inline-block;
 }
 .pdf-download-btn:hover {
-  background: #005fa3;
+  background: #555555;
   transform: translateY(-2px);
 }
 .pdf-download-btn:active {
-  background: #004a82;
+  background: #666666;
   transform: translateY(0);
 }
 .pdf-download-btn:focus {
-  outline: 2px solid #005fa3;
+  outline: 2px solid #555555;
   outline-offset: 2px;
 }
 
