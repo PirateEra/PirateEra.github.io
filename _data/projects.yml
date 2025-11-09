@@ -14,13 +14,13 @@
       - "Self-hosted the project on a dedicated Linux device, managing all server security, network configuration, and database (MySQL/Redis) administration."
     Data-Driven Balancing & Tooling:
       - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills. [Read More](/pages/projects/pirate-era/pirate_era_balancing/)"
-      - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/pirate-era/pirate_era_bossgenerator/)"
+      - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/boss-texture-tool/)"
     Modular Gameplay Systems:
-      - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding. [Read More](/pages/projects/pirate-era/pirate_era_skill_system/)"
-      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool. [Read More](/pages/projects/boss-texture-tool/)"
+      - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding."
+      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool."
       - "Wrote a dynamic, template-based dialogue system for creating NPC interactions through a simple menu interface."
     Features & UI:
-      - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/pirate-era/poster_system/)"
+      - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/bounty-poster-system/)"
       - "Implemented a custom HUD shader to display a unique, non-vanilla interface on the player's client. [Read More](/pages/projects/pirate-era/hud_shader/)"
       - "Created an in game wiki that auto-generates documentation for items, quests, and systems by parsing the server code."
   media:
@@ -296,7 +296,7 @@
       - "Used a noise function in the background shader to generate and animate a procedural starfield."
   media:
     - "/assets/images/shaders.png"
-  code_snippets_title: Code Samples
+  # code_snippets_title: Code Samples
   code_snippets:
     - title: "Noise function"
       content: |
@@ -358,7 +358,7 @@
       - "Added anti-aliasing (AA) by shooting and averaging four rays per pixel through sub-pixel centers to smooth jagged edges."
   presentation_title: "Rendered Images"
   presentation_folder: "/assets/images/projects/raytrace/"
-  code_snippets_title: Code Samples
+  # code_snippets_title: Code Samples
   code_snippets:
     - title: "Matte Shader"
       content: |
@@ -461,4 +461,59 @@
           skin_head = skinimage.crop((0, 0, 64, 16))
           image.paste(skin_head, (0, 0))
           return image
+        ```
+
+- id: bounty-poster-system
+  title: "Automatic Bounty Poster System"
+  description: "A Python & Java system to auto-generate personalized 'One Piece' style bounty posters from player data and display them in-game."
+  tools: "Python | Java | Denizen | Pillow | Web API"
+  about: "This system was created to increase player immersion and motivation in Pirate-Era. It gives players a personal incentive to increase their in-game bounty to have their own unique poster displayed. The system works via a Java plugin that uses Minecraft maps to display images. This plugin sends a web request to a custom Python tool, passing the player's UUID and bounty amount. The Python tool then uses Pillow to composite the player's skin and data onto a poster template, which is sent back and rendered in-game."
+  url: "/pages/projects/bounty-poster-system/"
+  contributions:
+    Backend Image Generation:
+      - "Developed a Python web service using Pillow to dynamically generate a 'One Piece' style bounty poster from a player's UUID and bounty amount."
+      - "Wrote the image processing logic to fetch the player's skin and composite it onto a poster template along with the dynamic bounty text."
+    In-Game Integration:
+      - "Created a Java plugin that utilizes Minecraft maps as a canvas to render custom images in-game."
+      - "Engineered the Java plugin to send a web request to the Python backend, retrieve the generated image, and display it on a map item."
+  media:
+    - "/assets/images/bountyposters.png"
+  code_snippets:
+    - title: "Image On Map Rendering"
+      content: |
+        ```java
+        public class MapImageRenderer extends MapRenderer {
+          private BufferedImage image;
+      
+          // Version of the constructor for a image file
+          public MapImageRenderer(File imageFile){
+              try {
+                  this.image = ImageIO.read(imageFile);
+                  // Automatically resize the image to fit the map if needed
+                  if (this.image != null && this.image.getWidth() != 128 && this.image.getHeight() != 128) {
+                      this.image = resizeImage(image, 128, 128);
+                  }
+              } catch (IOException e) {
+                  this.image = null;
+              }
+          }
+      
+          // Version of the constructor for a buffered image (less safe)
+          public MapImageRenderer(BufferedImage imageFile){
+              this.image = imageFile;
+              // Automatically resize the image to fit the map if needed
+              if (this.image != null && this.image.getWidth() != 128 && this.image.getHeight() != 128) {
+                  this.image = resizeImage(image, 128, 128);
+              }
+          }
+      
+          // The renderer of this renderer, this actually renders onto the map. So in this case an image
+          @Override
+          public void render(MapView mapView, MapCanvas mapCanvas, Player player) {
+              // Draw the image onto the canvas, the image has to exist because otherwise this is not called upon
+              if(image != null){
+                  mapCanvas.drawImage(0, 0, image);
+              }
+          }
+        }
         ```
