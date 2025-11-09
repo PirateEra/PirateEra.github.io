@@ -191,7 +191,7 @@
   tools: "Python | PyTorch | Data Analysis | Loss Functions | Jupyter"
   about: "This project's goal was to improve upon a baseline ENet model for 3D segmentation of organs (Heart, Aorta, Esophagus, Trachea) in CT scans. The primary challenges were severe class imbalance and noisy predictions. I analyzed and implemented various techniques, a key component of this was a deep dive into custom loss functions and data analysis to mitigate imbalance."
   image: "/assets/images/ai4mi.png"
-  url: "/projects/medai/"
+  url: "/pages/projects/medai/"
   github-link: https://github.com/PirateEra/ai4mi_project
   contributions:
   Data Analysis and Problem Identification:
