@@ -1,3 +1,32 @@
+/// INDEX HTML
+.author-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.author-avatar {
+  width: 150px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.author-text {
+  max-width: 600px;
+}
+
+.author-links a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.author-links a:hover {
+  text-decoration: underline;
+}
+
+/// 
 .project-grid-wrapper {
   position: relative;
   left: 50%;
