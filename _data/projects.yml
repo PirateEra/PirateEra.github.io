@@ -236,7 +236,7 @@
 - id: pragmatics
   date: "06-2024"
   title: "Diverse Sampling for Referential Games"
-  description: "Bachelor thesis on the impact of decoding algorithms (Multinomial vs. Beam vs. Diverse Beam) on candidate diversity and accuracy in pragmatic reasoning (referential games)."
+  description: "Bachelor thesis on the impact of decoding algorithms on candidate diversity and accuracy in pragmatic reasoning."
   tools: "Python | NLP | LSTM | Decoding Algorithms"
   about: "This thesis investigates which decoding algorithm generates the best candidate utterances for a pragmatic speaker in a referential image game. The speaker must describe a target image to a listener to distinguish it from two distractors. The study compares Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding on 'easy' (random) and 'hard' (visually/textually similar) distractors. The findings show that candidate diversity is crucial for success, and while DBD is the most promising for accuracy, it suffers from high computational costs compared to Multinomial Sampling."
   image: "/assets/images/sampling.png"
