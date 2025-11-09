@@ -2,7 +2,7 @@ journey:
   - "I'm a Game Developer and AI enthusiast with a deep-seated passion for building intelligent systems and engaging, data-driven game worlds. My journey began in 2016 not just as a player, but as a creator."
   - "That curiosity led me to develop and manage <strong>Pirate Era</strong>, a Minecraft MMORPG server that grew to over 30,000 members. This long-term project was my real-world classroom, teaching me everything from server architecture and custom plugin development to managing SQL databases and using Python tools to analyze player behavior and balance gameplay."
   - "To formalize my self-taught skills, I pursued a propaedeutic in Software Engineering, which I passed with Cum Laude distinction. This solidified my engineering foundation and led me to the University of Amsterdam. There, I completed my BSc in Artificial Intelligence, served as a Teaching Assistant for core computer science courses, and volunteered with the Dutch Nao Team."
-  - "Now, I'm currently expanding my expertise in my <strong>MSc in Artificial Intelligence</strong> at the University of Amsterdam, focusing on advanced machine learning, deep learning, and reinforcement learning—skills I'm eager to apply to the next generation of intelligent systems and game development challenges."
+  - "Now, I'm currently expanding my expertise in my <strong>MSc in Artificial Intelligence</strong> at the University of Amsterdam, focusing on advanced machine learning, deep learning, and reinforcement learning. Skills I'm eager to apply to the next generation of intelligent systems and game development challenges."
 
 education:
   - title: "MSc Artificial Intelligence"
@@ -39,7 +39,6 @@ skills:
     items:
       - "Python, Java, C++, C"
       - "HTML5, CSS, JavaScript, PHP"
-      - "Object-Oriented Programming (OOP)"
       - "Version Control (Git)"
       - "Agile/Scrum"
   - category: "Game & Application Development"
@@ -48,4 +47,3 @@ skills:
       - "Unity3D"
       - "Deployment, Redis, CI/CD"
       - "Algorithm Design & System Optimization"
-      - "3D Modeling (Blockbench, Maya, Blender)"
