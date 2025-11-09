@@ -2,6 +2,7 @@
 layout: single
 author_profile: false
 permalink: /aboutme/
+title: About Me
 ---
 
 <div class="custom-about-wrapper">
@@ -9,7 +10,7 @@ permalink: /aboutme/
       <div class="about-avatar-container">
         <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="about-avatar">
       </div>
-      
+
       <h2>My Journey</h2>
       {% for paragraph in site.data.aboutme.journey %}
       <p>{{ paragraph }}</p>
