@@ -433,7 +433,7 @@
       - "Wrote a script to programmatically create a new texture file by translating the extracted skin pixels to the correct coordinates on the boss UV template."
       - "Completely automated the texture creation process, removing the bottleneck of manual UV mapping and re-texturing for each new boss."
   presentation_title: "Visual Results"
-  presentation_folder: "/assets/images/projects/raytrace/"
+  presentation_folder: "/assets/images/projects/bossgenerator/"
   code_snippets:
     - title: "create_boss_skin"
       content: |
