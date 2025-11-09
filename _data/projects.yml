@@ -79,7 +79,7 @@
   date: "06-2025"
   title: "LLM Commentary for Graph Understanding"
   description: "Interactive graph visualization system to query graphs using natural language, providing LLM explanations and significance scores for query terms."
-  tools: "Python | Dash | Plotly | Pandas | Ollama (Llama3.2:3b)"
+  tools: "Python | Dash | Plotly | Pandas | Ollama"
   about: "The system proposes an interactive, user-friendly visual interface that extends the G-Retriever architecture, allowing users to retrieve graphs using natural language queries. It enhances interpretability by providing comprehensive explanations from the LLM and offering phrase-level feedback (significance scores) on how influential noun, verb, and preposition phrases were in generating the resulting subgraph."
   image: "/assets/images/graph_cover.png"
   url: "/pages/projects/graphunderstanding/"
