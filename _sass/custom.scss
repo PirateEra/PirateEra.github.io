@@ -261,6 +261,11 @@ html {
   background: #555555;
 }
 
+.slide-controls button:focus {
+  outline: 2px solid #555555;
+  outline-offset: 2px;
+}
+
 .slide-controls span {
   font-weight: bold;
 }
