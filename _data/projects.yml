@@ -1,10 +1,31 @@
 # Note to self, the first 3 projects will be highlighted
 
-- title: "Pirate Era"
-  date: "2019-Present"
-  description: "Owner of an MMORPG built inside Minecraft"
+- id: pirate-era
+  date: "2019 - Present"
+  title: "Pirate-Era MMORPG"
+  description: "Solo-developed MMORPG in Minecraft with 30,000+ players, featuring custom plugins, cross-server infrastructure, and data-driven game balancing."
+  tools: "Java | Python | Denizen | MySQL | Redis | Server Administration"
+  about: "Pirate-Era is a full-scale MMORPG built within Minecraft, attracting over 30,000 unique members. As the sole developer since 2019, I am responsible for all aspects of the project, including backend infrastructure, gameplay systems, and development tools. This involved creating custom Java plugins, writing Python scripts for automation and data analysis, and designing all in-game mechanics from scratch. I also self-host the entire project on a dedicated Linux device, managing all security, database (MySQL/Redis), and network setup."
   image: "/assets/images/pirate-era-cover.png"
-  url: "/projects/pirate-era/"
+  url: "/pages/projects/pirate-era/"
+  contributions:
+    Infrastructure & Backend:
+      - "Built a cross-server player system using Redis to sync player data (levels, skills, inventory) across lobbies, enabling scaling across multiple server."
+      - "Self-hosted the project on a dedicated Linux device, managing all server security, network configuration, and database (MySQL/Redis) administration."
+    Data-Driven Balancing & Tooling:
+      - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills. [Read More](/pages/projects/pirate-era/pirate_era_balancing/)"
+      - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/pirate-era/pirate_era_bossgenerator/)"
+    Modular Gameplay Systems:
+      - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding. [Read More](/pages/projects/pirate-era/pirate_era_skill_system/)"
+      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool. [Read More](/pages/projects/pirate-era/pirate_era_boss_system/)"
+      - "Wrote a dynamic, template-based dialogue system for creating NPC interactions through a simple menu interface."
+    Features & UI:
+      - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/pirate-era/poster_system/)"
+      - "Implemented a custom HUD shader to display a unique, non-vanilla interface on the player's client. [Read More](/pages/projects/pirate-era/hud_shader/)"
+      - "Created an in game wiki that auto-generates documentation for items, quests, and systems by parsing the server code."
+  media:
+    - "https://www.youtube.com/watch?v=osgt67R6ag0"
+    - "https://www.youtube.com/watch?v=nzzOIViL7GU"
 
 - id: cargoprobe
   date: "02-2023"
