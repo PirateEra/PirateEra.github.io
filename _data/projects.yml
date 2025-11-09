@@ -13,7 +13,7 @@
       - "Built a cross-server player system using Redis to sync player data (levels, skills, inventory) across lobbies, enabling scaling across multiple server."
       - "Self-hosted the project on a dedicated Linux device, managing all server security, network configuration, and database (MySQL/Redis) administration."
     Data-Driven Balancing & Tooling:
-      - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills. [Read More](/pages/projects/pirate-era/pirate_era_balancing/)"
+      - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills."
       - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/boss-texture-tool/)"
     Modular Gameplay Systems:
       - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding."
