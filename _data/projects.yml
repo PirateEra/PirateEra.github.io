@@ -5,7 +5,7 @@
   title: "Pirate-Era MMORPG"
   description: "Solo-developed MMORPG in Minecraft with 30,000+ players, featuring custom plugins, cross-server infrastructure, and data-driven game balancing."
   tools: "Java | Python | Denizen | MySQL | Redis | Server Administration"
-  about: "Pirate-Era is a full-scale MMORPG built within Minecraft, attracting over 30,000 unique members. As the sole developer since 2019, I am responsible for all aspects of the project, including backend infrastructure, gameplay systems, and development tools. This involved creating custom Java plugins, writing Python scripts for automation and data analysis, and designing all in-game mechanics from scratch. I also self-host the entire project on a dedicated Linux device, managing all security, database (MySQL/Redis), and network setup."
+  about: "Pirate-Era is a full-scale MMORPG built within Minecraft, attracting over 30,000 unique members. As the sole developer since 2019, I am responsible for all aspects of the project, including backend infrastructure, gameplay systems, and development tools. This involved creating custom Java plugins, writing Python scripts for automation and data analysis, and designing all in-game mechanics from scratch. I also self-host the entire project on a dedicated Linux device, managing all security, database, and network setup."
   image: "/assets/images/pirate-era-cover.png"
   url: "/pages/projects/pirate-era/"
   contributions:

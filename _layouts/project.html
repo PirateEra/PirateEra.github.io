@@ -16,7 +16,8 @@ layout: default
   </div>
 
   <div class="project-about">
-    <h2 style="margin: 0.5em 0 0.5em;">About {{ project.title }}</h2>
+    <!-- <h2 style="margin: 0.5em 0 0.5em;">About {{ project.title }}</h2> -->
+     <h2 style="margin: 0.5em 0 0.5em;">More About the Project {{ project.title }}</h2>
     <p class="project-tools-projectpage">{{ project.tools }}</p>
     <p>{{ project.about }}</p>
   </div>
@@ -81,7 +82,7 @@ layout: default
     <h3>{{ category }}</h3>
     <ul>
       {% for item in items %}
-        <li>{{ item }}</li>
+        <li>{{ item | markdownify }}</li>
       {% endfor %}
     </ul>
   {% endfor %}
