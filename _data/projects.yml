@@ -17,7 +17,7 @@
       - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/pirate-era/pirate_era_bossgenerator/)"
     Modular Gameplay Systems:
       - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding. [Read More](/pages/projects/pirate-era/pirate_era_skill_system/)"
-      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool. [Read More](/pages/projects/pirate-era/pirate_era_boss_system/)"
+      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool. [Read More](/pages/projects/boss-texture-tool/)"
       - "Wrote a dynamic, template-based dialogue system for creating NPC interactions through a simple menu interface."
     Features & UI:
       - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/pirate-era/poster_system/)"
@@ -417,3 +417,18 @@
         c_diffuse += diffuse_contribution;
         c_specular += specular_contribution;
         ```
+
+- id: boss-texture-tool
+  noshow: true
+  title: "Automatic Boss Texture Generator"
+  description: "A Python tool that automatically generates custom boss textures from standard Minecraft player skins, eliminating manual UV mapping."
+  tools: "Python | Image Processing (Pillow)"
+  about: "This tool was developed to accelerate the boss creation pipeline for the Pirate-Era project. Since most boss models shared a similar shape, a generalized UV map was created. This Python script automates the texturing process by reading a standard player skin, identifying all relevant pixel colors, and mapping them to the correct (x, y) coordinates on a new texture template that fits the custom boss's UV layout. This reduced a task that took hours of manual art effort down to seconds."
+  url: "/pages/projects/boss-texture-tool/"
+  contributions:
+    UV Map & Pixel Analysis:
+      - "Analyzed boss model similarities to establish a generalized UV map that could be shared across multiple boss types."
+      - "Developed a mapping algorithm in Python to read a source Minecraft skin and identify key pixel regions (e.g., head, torso, arms, legs)."
+    Texture Automation:
+      - "Wrote a script to programmatically create a new texture file by translating the extracted skin pixels to the correct coordinates on the boss UV template."
+      - "Completely automated the texture creation process, removing the bottleneck of manual UV mapping and re-texturing for each new boss."
