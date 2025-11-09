@@ -207,10 +207,31 @@
   presentation_title: "Impact of Loss Functions on Dice & HD95"
   presentation_folder: "/assets/images/projects/medai/"
 
-- title: "Leren en Beslissen"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: cargoprobe
+  date: "02-2023"
+  title: "Shipping Container Delay Prediction"
+  description: "Developed a regression model to predict shipping container ETA delays for CargoProbe, improving on their existing heuristics with a Random Forest."
+  tools: "Python | Scikit-learn | Random Forest | Data Analysis | Data Processing"
+  about: "This project for CargoProbe tackled supply chain disruptions by predicting shipping container delays. The provided data was complex, with over 330k entries, 23 columns, and significant missing values (e.g., 98% missing port data). After extensive data cleaning, feature engineering (creating 'time_left', 'time_spent', 'delay'), and imputation analysis, we compared several regression models. The final Random Forest model significantly outperformed CargoProbe's existing heuristics, reducing the Mean Absolute Error from 3.58 days to 1.20 days and the MSE from 54.75 to 7.92."
+  image: "/assets/images/cargoprobe.png"
+  url: "/pages/projects/cargoprobe/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/cargoprobe.pdf"
+  contributions:
+    Data Cleaning and Preprocessing:
+      - "Analyzed and cleaned a large dataset of 331,956 entries, handling extensive missing values (NaNs) which constituted almost half the data."
+      - "Standardized timestamp data to UTC and converted string values to lowercase to resolve duplicates and misspellings."
+      - "Managed data structure by merging rows to fill missing values and removing duplicate updates to prevent model bias, resulting in 18,772 clean rows for training."
+      - "Performed a chronological train-test split (80-20) instead of random shuffling to prevent data leakage from the same trip appearing in both sets."
+    Feature Engineering and Data Analysis:
+      - "Engineered critical time-based features for regression, including 'time_left' (ETA - update_datetime) and 'time_spent' (update_datetime - date_added)."
+      - "Created the target variable 'delay' (ATA - ETA) to quantify the prediction error of CargoProbe's existing system."
+      - "Analyzed the cleaned data, finding that 84.53% of trips arrived late and 28.26% were delayed by 72 hours or more."
+      - "Applied One-Hot Encoding to categorical features like 'origin_city', 'vesselname', and 'activity' to prepare data for modeling."
+    Model Development and Evaluation:
+      - "Evaluated multiple regression models, including Linear Regression (which underfit) and Polynomial Regression (which was too computationally expensive)."
+      - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
+      - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
 
 - title: "Earth Shader Project"
   description: "Random mock project"
