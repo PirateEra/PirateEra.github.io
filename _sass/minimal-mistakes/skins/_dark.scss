@@ -5,6 +5,7 @@
 /* Colors */
 $background-color: #FFFFFF !default;
 $header-color: #121212 !default;
+$header-text-color: #eaeaea !default;
 $text-color: #333333 !default;
 $primary-color: #6a1b9a !default;
 $border-color: mix(#fff, $background-color, 20%) !default;
@@ -12,11 +13,12 @@ $code-background-color: #1e1e1e !default;
 $code-background-color-dark: #1e1e1e !default;
 $form-background-color: #1e1e1e !default;
 $footer-background-color: #1e1e1e !default;
+$footer-text-color: #eaeaea !default;
 $link-color: mix($primary-color, $text-color, 40%) !default;
 $link-color-hover: mix(#fff, $link-color, 25%) !default;
 $link-color-visited: mix(#000, $link-color, 25%) !default;
-$masthead-link-color: $text-color !default;
-$masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
+$masthead-link-color: $header-text-color !default;
+$masthead-link-color-hover: mix(#000, $header-text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
 .author__urls.social-icons i,
