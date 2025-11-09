@@ -387,6 +387,126 @@ html {
   font-size: 1.1rem;
   text-align: center;
 }
+/// About me page
+.custom-about-wrapper {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 3rem 0;
+}
 
+.author-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
 
+.author-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.author-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.author-text h1 {
+  margin-top: 0;
+}
+
+.author-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.custom-about-wrapper h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.custom-about-wrapper > p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.education-item {
+  flex: 1 1 300px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  transition: all 0.2s ease-in-out;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.education-item h3 {
+  margin-top: 0;
+  font-size: 1.25em;
+  color: #6a1b9a; /* Theme purple */
+}
+
+.education-item p {
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+}
+
+.education-item .current-study {
+  font-weight: bold;
+  color: #6a1b9a; /* Theme purple */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-category {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.skills-category h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.skills-category ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.skills-category li {
+  font-size: 1em;
+  line-height: 1.6;
+}
+/// 
 

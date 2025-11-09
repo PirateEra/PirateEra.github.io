@@ -1,0 +1,41 @@
+---
+layout: single
+author_profile: false
+permalink: /aboutme/
+---
+
+<div class="custom-about-wrapper">
+  <h2>My Journey</h2>
+  {% for paragraph in site.data.autobiography.journey %}
+  <p>{{ paragraph }}</p>
+  {% endfor %}
+
+  <h2>Education</h2>
+  <div class="education-container">
+    {% for item in site.data.autobiography.education %}
+    <div class="education-item">
+      <h3>{{ item.title }}</h3>
+      <p><strong>{{ item.university }}</strong></p>
+      <p {% if item.current %}class="current-study" {% endif %}>{{ item.dates }}</p>
+      {% if item.details != "" %}
+      <p>{{ item.details }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>Core Skills</h2>
+  <div class="skills-container">
+    {% for category in site.data.autobiography.skills %}
+    <div class="skills-category">
+      <h3>{{ category.category }}</h3>
+      <ul>
+        {% for item in category.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

@@ -1,0 +1,51 @@
+journey:
+  - "I'm a Game Developer and AI enthusiast with a deep-seated passion for building intelligent systems and engaging, data-driven game worlds. My journey began in 2016 not just as a player, but as a creator."
+  - "That curiosity led me to develop and manage <strong>Pirate Era</strong>, a Minecraft MMORPG server that grew to over 30,000 members. This long-term project was my real-world classroom, teaching me everything from server architecture and custom plugin development to managing SQL databases and using Python tools to analyze player behavior and balance gameplay."
+  - "To formalize my self-taught skills, I pursued a propaedeutic in Software Engineering, which I passed with Cum Laude distinction. This solidified my engineering foundation and led me to the University of Amsterdam. There, I completed my BSc in Artificial Intelligence, served as a Teaching Assistant for core computer science courses, and volunteered with the Dutch Nao Team."
+  - "Now, I'm currently expanding my expertise in my <strong>MSc in Artificial Intelligence</strong> at the University of Amsterdam, focusing on advanced machine learning, deep learning, and reinforcement learning—skills I'm eager to apply to the next generation of intelligent systems and game development challenges."
+
+education:
+  - title: "MSc Artificial Intelligence"
+    university: "University of Amsterdam"
+    dates: "Sep 2024 - Jun 2026 (Current)"
+    details: "<em>Relevant: Advanced ML, DL, Reinforcement Learning</em>"
+    current: true
+  - title: "BSc Artificial Intelligence"
+    university: "University of Amsterdam"
+    dates: "Sep 2021 - Jun 2024"
+    details: "<em>GPA: 7.56 | Volunteered for Dutch Nao Team</em>"
+    current: false
+  - title: "Propaedeutic Software Engineering"
+    university: "Amsterdam University of Applied Sciences"
+    dates: "Sep 2020 - Jun 2021"
+    details: "<em>Passed with Cum Laude distinction (GPA: 8.29)</em>"
+    current: false
+  - title: "Secondary Vocational Game Development"
+    university: "Grafisch Lyceum Utrecht"
+    dates: "Sep 2016 - Jun 2020"
+    details: ""
+    current: false
+
+skills:
+  - category: "Data Science & AI"
+    items:
+      - "Machine Learning & Deep Learning"
+      - "Natural Language Processing (NLP)"
+      - "Data Processing, Analysis, & Visualization"
+      - "Statistical Modelling"
+      - "SQL/MySQL, Jupyter, NumPy, Pandas"
+      - "PyTorch, TensorFlow"
+  - category: "Programming & Software Development"
+    items:
+      - "Python, Java, C++, C"
+      - "HTML5, CSS, JavaScript, PHP"
+      - "Object-Oriented Programming (OOP)"
+      - "Version Control (Git)"
+      - "Agile/Scrum"
+  - category: "Game & Application Development"
+    items:
+      - "Minecraft Plugin & Server Architecture"
+      - "Unity3D"
+      - "Deployment, Redis, CI/CD"
+      - "Algorithm Design & System Optimization"
+      - "3D Modeling (Blockbench, Maya, Blender)"
