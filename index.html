@@ -3,7 +3,7 @@ layout: single
 author_profile: false
 ---
 
-<div class="author-intro-wrapper">
+<div class="custom-home-wrapper">
   <div class="author-intro">
     <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="author-avatar">
   
@@ -26,30 +26,33 @@ author_profile: false
       </p>
     </div>
   </div>
+
+  <!-- <h2 style="text-align: center; margin-bottom: 1rem;">Highlighted Projects</h2> -->
+  <section id="highlights">
+    <div class="project-grid">
+      {% for project in site.data.projects limit:3 %}
+        <a href="{{ project.url }}" class="project-card">
+          <img src="{{ project.image }}" alt="{{ project.title }}">
+          <div class="project-info">
+            <h3>{{ project.title }}</h3>
+            <span class="project-date">{{ project.date }}</span>
+            <!-- <p>{{ project.description }}</p> -->
+             <div class="project-tools">
+               {% assign tool_list = project.tools | split: " | " %}
+               {% for tool in tool_list %}
+                 <span class="tool-badge">{{ tool }}</span>
+               {% endfor %}
+             </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
 </div>
 
-
+<!-- 
 <hr style="margin: 3rem auto; width: 60%;">
 
 <section id="highlights" class="project-grid-wrapper">
-  <!-- <h2 style="text-align: center; margin-bottom: 1rem;">Highlighted Projects</h2> -->
-  <div class="project-grid">
-    {% for project in site.data.projects limit:3 %}
-      <a href="{{ project.url }}" class="project-card">
-        <img src="{{ project.image }}" alt="{{ project.title }}">
-        <div class="project-info">
-          <h3>{{ project.title }}</h3>
-          <span class="project-date">{{ project.date }}</span>
-          <!-- <p>{{ project.description }}</p> -->
-           <div class="project-tools">
-             {% assign tool_list = project.tools | split: " | " %}
-             {% for tool in tool_list %}
-               <span class="tool-badge">{{ tool }}</span>
-             {% endfor %}
-           </div>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-</section>
+</section> -->
 
