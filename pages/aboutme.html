@@ -6,13 +6,13 @@ permalink: /aboutme/
 
 <div class="custom-about-wrapper">
   <h2>My Journey</h2>
-  {% for paragraph in site.data.autobiography.journey %}
+  {% for paragraph in site.data.aboutme.journey %}
   <p>{{ paragraph }}</p>
   {% endfor %}
 
   <h2>Education</h2>
   <div class="education-container">
-    {% for item in site.data.autobiography.education %}
+    {% for item in site.data.aboutme.education %}
     <div class="education-item">
       <h3>{{ item.title }}</h3>
       <p><strong>{{ item.university }}</strong></p>
@@ -26,7 +26,7 @@ permalink: /aboutme/
 
   <h2>Core Skills</h2>
   <div class="skills-container">
-    {% for category in site.data.autobiography.skills %}
+    {% for category in site.data.aboutme.skills %}
     <div class="skills-category">
       <h3>{{ category.category }}</h3>
       <ul>
