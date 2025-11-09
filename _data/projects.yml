@@ -254,7 +254,6 @@
     Experimental Design and Analysis:
       - "Designed an evaluation setup using the MS COCO dataset with two distinct difficulty levels: 'easy' (random distractors) and 'hard' (semantically similar distractors)."
       - "Created the 'hard' dataset by selecting distractors based on high visual and textual cosine similarity."
-  
   media:
     - "/assets/images/sampling.png"
 
