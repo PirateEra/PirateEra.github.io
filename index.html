@@ -3,26 +3,28 @@ layout: single
 author_profile: false
 ---
 
-<div class="author-intro">
-  <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="author-avatar">
-
-  <div class="author-text">
-    <h1>Hi, I am {{ site.author.name }}</h1>
-    <p><em>{{ site.author.personal-title }}</em></p>
-
-    <p><strong>About me:</strong></p>
-    <p>{{ site.author.bio | markdownify }}</p>
-
-    <p class="author-links">
-      {% for link in site.author.links %}
-        {% if link.url %}
-          <a href="{{ link.url }}" target="_blank">
-            <i class="{{ link.icon }}"></i> {{ link.label }}
-          </a>
-          {% unless forloop.last %} · {% endunless %}
-        {% endif %}
-      {% endfor %}
-    </p>
+<div class="author-intro-wrapper">
+  <div class="author-intro">
+    <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="author-avatar">
+  
+    <div class="author-text">
+      <h1>Hi, I am {{ site.author.name }}</h1>
+      <p><em>{{ site.author.personal-title }}</em></p>
+  
+      <p><strong>About me:</strong></p>
+      <p>{{ site.author.bio | markdownify }}</p>
+  
+      <p class="author-links">
+        {% for link in site.author.links %}
+          {% if link.url %}
+            <a href="{{ link.url }}" target="_blank">
+              <i class="{{ link.icon }}"></i> {{ link.label }}
+            </a>
+            {% unless forloop.last %} · {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </p>
+    </div>
   </div>
 </div>
 
