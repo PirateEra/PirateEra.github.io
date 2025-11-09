@@ -184,10 +184,28 @@
   media:
     - "/assets/images/roger_pipeline.png"
 
-- title: "AI for Medical Imaging"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: medai
+  date: "10-2025"
+  title: "Improving 3D CT Organ Segmentation"
+  description: "An AI for Medical Imaging project that improved 3D segmentation of thoracic organs by systematically addressing severe class imbalance and model noise."
+  tools: "Python | PyTorch | Data Analysis | Loss Functions | Jupyter"
+  about: "This project's goal was to improve upon a baseline ENet model for 3D segmentation of organs (Heart, Aorta, Esophagus, Trachea) in CT scans. The primary challenges were severe class imbalance and noisy predictions. I analyzed and implemented various techniques, a key component of this was a deep dive into custom loss functions and data analysis to mitigate imbalance."
+  image: "/assets/images/ai4mi.png"
+  url: "/projects/medai/"
+  github-link: https://github.com/PirateEra/ai4mi_project
+  contributions:
+  Data Analysis and Problem Identification:
+    - "Analyzed the voxel and slice distributions for all 40 participants, identifying severe class imbalance as a core limitation."
+    - "Quantified that background voxels made up 98.95% of the data, with rare classes like Esophagus (0.05%) and Trachea (0.03%) being vastly underrepresented."
+  Loss Function Experimentation:
+    - "Identified that the baseline cross-entropy loss struggled with rare classes."
+    - "Researched and implemented alternative loss functions to address the imbalance, including pure Dice loss and various hybrid (Dice + Cross Entropy) losses."
+    - "Analyzed the trade-offs of these losses, noting that Dice loss improved performance on rare classes by focusing on overall shape rather than individual voxels."
+  Model Improvement and Evaluation:
+    - "Contributed to the development of the final 'Best Model,' which integrated multiple improvements (2.5D, Multi-Window, SE blocks, NAdam)."
+    - "The final model achieved major gains in rare class segmentation."
+  presentation_title: "Impact of Loss Functions on Dice & HD95"
+  presentation_folder: "/assets/images/projects/medai/"
 
 - title: "Leren en Beslissen"
   description: "Random mock project"
