@@ -4,6 +4,60 @@
   image: "/assets/images/pirate-era-cover.png"
   url: "/projects/pirate-era/"
 
+- id: cargoprobe
+  date: "02-2023"
+  title: "Shipping Container Delay Prediction"
+  description: "Developed a regression model to predict shipping container ETA delays for CargoProbe, improving on their existing heuristics with a Random Forest."
+  tools: "Python | Scikit-learn | Random Forest | Data Analysis | Data Processing"
+  about: "This project for CargoProbe tackled supply chain disruptions by predicting shipping container delays. The provided data was complex, with over 330k entries, 23 columns, and significant missing values (e.g., 98% missing port data). After extensive data cleaning, feature engineering (creating 'time_left', 'time_spent', 'delay'), and imputation analysis, we compared several regression models. The final Random Forest model significantly outperformed CargoProbe's existing heuristics, reducing the Mean Absolute Error from 3.58 days to 1.20 days and the MSE from 54.75 to 7.92."
+  image: "/assets/images/cargoprobe.png"
+  url: "/pages/projects/cargoprobe/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/cargoprobe.pdf"
+  contributions:
+    Data Cleaning and Preprocessing:
+      - "Analyzed and cleaned a large dataset of 331,956 entries, handling extensive missing values (NaNs) which constituted almost half the data."
+      - "Standardized timestamp data to UTC and converted string values to lowercase to resolve duplicates and misspellings."
+      - "Managed data structure by merging rows to fill missing values and removing duplicate updates to prevent model bias, resulting in 18,772 clean rows for training."
+      - "Performed a chronological train-test split (80-20) instead of random shuffling to prevent data leakage from the same trip appearing in both sets."
+    Feature Engineering and Data Analysis:
+      - "Engineered critical time-based features for regression, including 'time_left' (ETA - update_datetime) and 'time_spent' (update_datetime - date_added)."
+      - "Created the target variable 'delay' (ATA - ETA) to quantify the prediction error of CargoProbe's existing system."
+      - "Analyzed the cleaned data, finding that 84.53% of trips arrived late and 28.26% were delayed by 72 hours or more."
+      - "Applied One-Hot Encoding to categorical features like 'origin_city', 'vesselname', and 'activity' to prepare data for modeling."
+    Model Development and Evaluation:
+      - "Evaluated multiple regression models, including Linear Regression (which underfit) and Polynomial Regression (which was too computationally expensive)."
+      - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
+      - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
+
+- id: graphunderstanding
+  date: "06-2025"
+  title: "LLM Commentary for Graph Understanding"
+  description: "Interactive graph visualization system to query graphs using natural language, providing LLM explanations and significance scores for query terms."
+  tools: "Python | Dash | Plotly | Pandas | Ollama"
+  about: "The system proposes an interactive, user-friendly visual interface, allowing users to retrieve graphs using natural language queries. It enhances interpretability by providing comprehensive explanations from the LLM and offering phrase-level feedback (significance scores) on how influential noun, verb, and preposition phrases were in generating the resulting subgraph."
+  image: "/assets/images/graph_cover.png"
+  url: "/pages/projects/graphunderstanding/"
+  github-link: https://github.com/PirateEra/Multimedia-Analytics
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/graphunderstanding.pdf"
+  contributions:
+    Interactive Interface Development:
+      - "Developed an interactive and user-friendly visual system for natural language graph querying using Dash and Plotly."
+      - "Visualized the original graphs and their retrieved subgraphs in the interface's center part."
+    Query Interpretability & Feedback:
+      - "Implemented phrase-level feedback over the user's query by providing significance scores to show how relevant a phrase was for retrieving the subgraph."
+      - "Integrated the significance score calculation using an entity-level perturbation strategy and the Jaccard similarity between the original and perturbed subgraphs."
+    LLM Integration & Explanation:
+      - "Utilized an LLM (Llama3.2:3b via Ollama) to answer user queries based on the retrieved subgraph."
+      - "Provided an explanation alongside the generated answer, detailing how the LLM arrived at its conclusion."
+    Data Analysis and Interpretation:
+      - "Developed a novel method for phrase-level feedback by calculating significance scores for query terms to enhance model interpretability."
+      - "Employed the Entity-level Perturbation strategy to modify queries and determine the influence of specific lexical units on subgraph retrieval."
+      - "Quantified entity influence by calculating the similarity (using Jaccard index concept) between the original and perturbed subgraphs."
+  presentation_title: "Visual Interface Screenshots"
+  presentation_folder: "/assets/images/projects/graphvisualisation/"
+
 - id: hightide
   date: "01-2017"
   title: "High Tide"
@@ -74,38 +128,6 @@
   #       def example_code(speed):
   #           print(f"Moving at {speed} speed!")
   #       ```
-
-- id: graphunderstanding
-  date: "06-2025"
-  title: "LLM Commentary for Graph Understanding"
-  description: "Interactive graph visualization system to query graphs using natural language, providing LLM explanations and significance scores for query terms."
-  tools: "Python | Dash | Plotly | Pandas | Ollama"
-  about: "The system proposes an interactive, user-friendly visual interface, allowing users to retrieve graphs using natural language queries. It enhances interpretability by providing comprehensive explanations from the LLM and offering phrase-level feedback (significance scores) on how influential noun, verb, and preposition phrases were in generating the resulting subgraph."
-  image: "/assets/images/graph_cover.png"
-  url: "/pages/projects/graphunderstanding/"
-  github-link: https://github.com/PirateEra/Multimedia-Analytics
-  project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/graphunderstanding.pdf"
-  contributions:
-    Interactive Interface Development:
-      - "Developed an interactive and user-friendly visual system for natural language graph querying using Dash and Plotly."
-      - "Visualized the original graphs and their retrieved subgraphs in the interface's center part."
-    Query Interpretability & Feedback:
-      - "Implemented phrase-level feedback over the user's query by providing significance scores to show how relevant a phrase was for retrieving the subgraph."
-      - "Integrated the significance score calculation using an entity-level perturbation strategy and the Jaccard similarity between the original and perturbed subgraphs."
-    LLM Integration & Explanation:
-      - "Utilized an LLM (Llama3.2:3b via Ollama) to answer user queries based on the retrieved subgraph."
-      - "Provided an explanation alongside the generated answer, detailing how the LLM arrived at its conclusion."
-    Data Analysis and Interpretation:
-      - "Developed a novel method for phrase-level feedback by calculating significance scores for query terms to enhance model interpretability."
-      - "Employed the Entity-level Perturbation strategy to modify queries and determine the influence of specific lexical units on subgraph retrieval."
-      - "Quantified entity influence by calculating the similarity (using Jaccard index concept) between the original and perturbed subgraphs."
-  presentation_title: "Visual Interface Screenshots"
-  presentation_folder: "/assets/images/projects/graphvisualisation/"
-  # media:
-  #   - /assets/images/projects/graphvisualisation/2.png
-  #   - /assets/images/projects/graphvisualisation/3.png
-  #   - /assets/images/projects/graphvisualisation/1.png
 
 - id: "ood-generalization"
   title: "ACTS"
@@ -206,32 +228,6 @@
       - "The final model achieved major gains in rare class segmentation."
   presentation_title: "Impact of Loss Functions on Dice & HD95"
   presentation_folder: "/assets/images/projects/medai/"
-
-- id: cargoprobe
-  date: "02-2023"
-  title: "Shipping Container Delay Prediction"
-  description: "Developed a regression model to predict shipping container ETA delays for CargoProbe, improving on their existing heuristics with a Random Forest."
-  tools: "Python | Scikit-learn | Random Forest | Data Analysis | Data Processing"
-  about: "This project for CargoProbe tackled supply chain disruptions by predicting shipping container delays. The provided data was complex, with over 330k entries, 23 columns, and significant missing values (e.g., 98% missing port data). After extensive data cleaning, feature engineering (creating 'time_left', 'time_spent', 'delay'), and imputation analysis, we compared several regression models. The final Random Forest model significantly outperformed CargoProbe's existing heuristics, reducing the Mean Absolute Error from 3.58 days to 1.20 days and the MSE from 54.75 to 7.92."
-  image: "/assets/images/cargoprobe.png"
-  url: "/pages/projects/cargoprobe/"
-  project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/cargoprobe.pdf"
-  contributions:
-    Data Cleaning and Preprocessing:
-      - "Analyzed and cleaned a large dataset of 331,956 entries, handling extensive missing values (NaNs) which constituted almost half the data."
-      - "Standardized timestamp data to UTC and converted string values to lowercase to resolve duplicates and misspellings."
-      - "Managed data structure by merging rows to fill missing values and removing duplicate updates to prevent model bias, resulting in 18,772 clean rows for training."
-      - "Performed a chronological train-test split (80-20) instead of random shuffling to prevent data leakage from the same trip appearing in both sets."
-    Feature Engineering and Data Analysis:
-      - "Engineered critical time-based features for regression, including 'time_left' (ETA - update_datetime) and 'time_spent' (update_datetime - date_added)."
-      - "Created the target variable 'delay' (ATA - ETA) to quantify the prediction error of CargoProbe's existing system."
-      - "Analyzed the cleaned data, finding that 84.53% of trips arrived late and 28.26% were delayed by 72 hours or more."
-      - "Applied One-Hot Encoding to categorical features like 'origin_city', 'vesselname', and 'activity' to prepare data for modeling."
-    Model Development and Evaluation:
-      - "Evaluated multiple regression models, including Linear Regression (which underfit) and Polynomial Regression (which was too computationally expensive)."
-      - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
-      - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
 
 - id: pragmatics
   date: "06-2024"
