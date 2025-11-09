@@ -398,6 +398,12 @@ html {
   padding: 3rem 0;
 }
 
+.custom-about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 .author-intro {
   display: flex;
   flex-wrap: wrap;
@@ -467,7 +473,6 @@ html {
 .education-item h3 {
   margin-top: 0;
   font-size: 1.25em;
-  color: #6a1b9a; /* Theme purple */
 }
 
 .education-item p {
@@ -477,7 +482,6 @@ html {
 
 .education-item .current-study {
   font-weight: bold;
-  color: #6a1b9a; /* Theme purple */
 }
 
 .skills-container {
