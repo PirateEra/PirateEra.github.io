@@ -233,17 +233,37 @@
       - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
       - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
 
+- id: pragmatics
+  date: "06-2024"
+  title: "Diverse Sampling for Referential Games"
+  description: "Bachelor thesis on the impact of decoding algorithms (Multinomial vs. Beam vs. Diverse Beam) on candidate diversity and accuracy in pragmatic reasoning (referential games)."
+  tools: "Python | NLP | LSTM | Decoding Algorithms"
+  about: "This thesis investigates which decoding algorithm generates the best candidate utterances for a pragmatic speaker in a referential image game. The speaker must describe a target image to a listener to distinguish it from two distractors. The study compares Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding on 'easy' (random) and 'hard' (visually/textually similar) distractors. The findings show that candidate diversity is crucial for success, and while DBD is the most promising for accuracy, it suffers from high computational costs compared to Multinomial Sampling."
+  image: "/assets/images/sampling.png"
+  url: "/pages/projects/pragmatics/"
+  github-link: "https://github.com/PirateEra/ToM-Language-Acquisition
+  project_pdf_title: "Bachelor Thesis"
+  project_pdf: "/assets/pdfs/sampling.pdf"
+  contributions:
+    Pragmatic Model Implementation:
+      - "Implemented a full pragmatic reasoning pipeline based on the Rational Speech Act framework."
+      - "Constructed a Pragmatic Speaker that samples candidates from a Literal Speaker (LSTM) and re-ranks them using a Literal Listener (ResNet/ROBERTa)."
+    Decoding Algorithm Comparison:
+      - "Implemented and systematically compared three distinct decoding algorithms: Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding."
+      - "Analyzed the trade-offs between candidate diversity (measured by Distinct n-grams) and model performance (measured by Accuracy and Entropy)."
+    Experimental Design and Analysis:
+      - "Designed an evaluation setup using the MS COCO dataset with two distinct difficulty levels: 'easy' (random distractors) and 'hard' (semantically similar distractors)."
+      - "Created the 'hard' dataset by selecting distractors based on high visual and textual cosine similarity."
+  
+  media:
+    - "/assets/images/sampling.png"
+
 - title: "Earth Shader Project"
   description: "Random mock project"
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
 
 - title: "Raytracing Project"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
-
-- title: "Bsc Thesis"
   description: "Random mock project"
   image: "/assets/images/projects/mock/mockimg.png"
   url: "/projects/mock project/"
