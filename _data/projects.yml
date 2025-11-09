@@ -432,3 +432,33 @@
     Texture Automation:
       - "Wrote a script to programmatically create a new texture file by translating the extracted skin pixels to the correct coordinates on the boss UV template."
       - "Completely automated the texture creation process, removing the bottleneck of manual UV mapping and re-texturing for each new boss."
+  presentation_title: "Visual Results"
+  presentation_folder: "/assets/images/projects/raytrace/"
+  code_snippets:
+    - title: "create_boss_skin"
+      content: |
+        ```python
+        def create_boss_skin(minecraft_skin_path):
+          # Open the original 64x64 image
+          original_skin = Image.open(minecraft_skin_path)
+          # Create a new 128x128 canvas
+          result_image = Image.new("RGBA", (128, 128), (0, 0, 0, 0))
+          result_image = add_head(original_skin, result_image)
+          result_image = add_upper_torso(original_skin, result_image)
+          result_image = add_lower_torso(original_skin, result_image)
+          result_image = add_belt(original_skin, result_image)
+          result_image = add_right_arm(original_skin, result_image)
+          result_image = add_left_arm(original_skin, result_image)
+          result_image = add_right_leg(original_skin, result_image)
+          result_image = add_left_leg(original_skin, result_image)
+          result_image = add_groin(original_skin, result_image)
+          return result_image
+        ```
+    - title: "add_head"
+      content: |
+        ```python
+        def add_head(skinimage, image):
+          skin_head = skinimage.crop((0, 0, 64, 16))
+          image.paste(skin_head, (0, 0))
+          return image
+        ```
