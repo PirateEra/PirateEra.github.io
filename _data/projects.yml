@@ -194,16 +194,16 @@
   url: "/pages/projects/medai/"
   github-link: https://github.com/PirateEra/ai4mi_project
   contributions:
-  Data Analysis and Problem Identification:
-    - "Analyzed the voxel and slice distributions for all 40 participants, identifying severe class imbalance as a core limitation."
-    - "Quantified that background voxels made up 98.95% of the data, with rare classes like Esophagus (0.05%) and Trachea (0.03%) being vastly underrepresented."
-  Loss Function Experimentation:
-    - "Identified that the baseline cross-entropy loss struggled with rare classes."
-    - "Researched and implemented alternative loss functions to address the imbalance, including pure Dice loss and various hybrid (Dice + Cross Entropy) losses."
-    - "Analyzed the trade-offs of these losses, noting that Dice loss improved performance on rare classes by focusing on overall shape rather than individual voxels."
-  Model Improvement and Evaluation:
-    - "Contributed to the development of the final 'Best Model,' which integrated multiple improvements (2.5D, Multi-Window, SE blocks, NAdam)."
-    - "The final model achieved major gains in rare class segmentation."
+    Data Analysis and Problem Identification:
+      - "Analyzed the voxel and slice distributions for all 40 participants, identifying severe class imbalance as a core limitation."
+      - "Quantified that background voxels made up 98.95% of the data, with rare classes like Esophagus (0.05%) and Trachea (0.03%) being vastly underrepresented."
+    Loss Function Experimentation:
+      - "Identified that the baseline cross-entropy loss struggled with rare classes."
+      - "Researched and implemented alternative loss functions to address the imbalance, including pure Dice loss and various hybrid (Dice + Cross Entropy) losses."
+      - "Analyzed the trade-offs of these losses, noting that Dice loss improved performance on rare classes by focusing on overall shape rather than individual voxels."
+    Model Improvement and Evaluation:
+      - "Contributed to the development of the final 'Best Model,' which integrated multiple improvements (2.5D, Multi-Window, SE blocks, NAdam)."
+      - "The final model achieved major gains in rare class segmentation."
   presentation_title: "Impact of Loss Functions on Dice & HD95"
   presentation_folder: "/assets/images/projects/medai/"
 
