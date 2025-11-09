@@ -257,12 +257,144 @@
   media:
     - "/assets/images/sampling.png"
 
-- title: "Earth Shader Project"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+- id: shaders
+  date: "10-2023"
+  title: "WebGL Planet Shader"
+  description: "An educational project implementing a 3D planet scene with custom vertex and fragment shaders, procedural noise, and texturing."
+  tools: "JavaScript | WebGL | GLSL"
+  about: "As part of the 'Graphics and Game Technology' course, this project involved using a JavaScript and WebGL framework to build a 3D scene from scratch. Starting with a blank framework, I implemented the procedural generation of a sphere mesh. I then wrote a series of GLSL vertex and fragment shaders to implement per-pixel Phong lighting, earth-map texturing, and procedural multi-layer noise for a dynamic cloud effect. Finally, I added a separate shader program to render an animated procedural starfield in the background."
+  image: "/assets/images/shaders.png"
+  url: "/pages/projects/shaders/"
+  contributions:
+    Geometry and Lighting:
+      - "Procedurally generated a 3D sphere mesh, calculating all vertex positions, normals, and texture coordinates."
+      - "Implemented Gouraud (per-vertex) shading and refactored it into a per-pixel Phong lighting model in the fragment shader."
+    Procedural Texturing and Effects:
+      - "Applied a 2D texture map of the Earth to the sphere using a sampler in the fragment shader."
+      - "Wrote a GLSL noise function to generate multi-layered, procedural clouds that move over the planet's surface."
+    Background Shader:
+      - "Created a separate shader program to render a full-screen plane behind the planet."
+      - "Used a noise function in the background shader to generate and animate a procedural starfield."
+  media:
+    - "/assets/images/shaders.png"
+  code_snippets_title: Code Samples
+  code_snippets:
+    - title: "Noise function"
+      content: |
+        ```c
+        float noise (in vec2 st) {
+            vec2 i = floor(st);
+            vec2 f = fract(st);
+            // Four corners in 2D of a tile
+            float a = random(i);
+            float b = random(i + vec2(1.0, 0.0));
+            float c = random(i + vec2(0.0, 1.0));
+            float d = random(i + vec2(1.0, 1.0));
+            // Smooth Interpolation
+            vec2 u = smoothstep(0.,1.,f);
+            // Mix 4 corner percentages
+            return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+        }
+        ```
+    - title: "Star Fragment Shader"
+      content: |
+        ```c
+        void main(void) {
+            vec3 finalLightColor = vec3(0.0);
+            float starSpeed = 0.0005;
+            float currentCount = mod(uFrame * starSpeed, 60.0);
 
-- title: "Raytracing Project"
-  description: "Random mock project"
-  image: "/assets/images/projects/mock/mockimg.png"
-  url: "/projects/mock project/"
+            float xPos = vPos[0] + currentCount;
+        
+            if (noise(vec2(xPos * 200.0, vPos[1] * 200.0)) > 0.93) {
+                float noiseColor = noise(vec2(vPos[0] * 50.0, vPos[1] * 50.0));
+                finalLightColor += vec3(noiseColor);
+            }
+        
+            vec3 color = finalLightColor;
+        
+            gl_FragColor = vec4(color, 1.0);
+        }
+        ```
+
+- id: raytrace
+  date: "10-2023"
+  title: "C Ray Tracer"
+  description: "An educational project to build a ray tracer's core components, including multiple shading models, reflections, and a BVH acceleration structure."
+  tools: "C | 3D Graphics | Ray Tracing"
+  about: "This project, part of a 'Graphics and Game Technology' course, involved implementing the fundamental algorithms of a ray tracer from a provided C framework. I implemented the initial camera ray generation and various shading models, including Matte, Blinn-Phong, and recursive reflections, complete with shadow casting. A major component was performance optimization, where I implemented an efficient traversal algorithm for a Bounding Volume Hierarchy (BVH) to accelerate ray-triangle intersections for complex 3D models. Finally, I added anti-aliasing to improve final image quality."
+  image: "/assets/images/final_result_raytrace.png"
+  url: "/pages/projects/raytrace/"
+  contributions:
+    Core Ray Tracing and Optimization:
+      - "Wrote the core logic for camera ray generation, shooting rays from the camera's position through the center of each pixel."
+      - "Implemented a BVH traversal algorithm to drastically speed up intersection tests on complex models."
+      - "Optimized BVH traversal by implementing branch pruning, skipping nodes that are farther than the closest intersection already found."
+    Shader and Lighting Implementation:
+      - "Implemented a Matte shader to compute surface color based on light contribution."
+      - "Added shadow rays to the shaders, checking for occlusions between intersection points and light sources."
+      - "Built a Blinn-Phong shader to render metallic-like surfaces by calculating ambient, diffuse, and specular lighting components."
+      - "Implemented a recursive reflection shader that combined 75% matte shading with 25% reflected color, obtained by tracing new rays recursively."
+    Image Quality:
+      - "Added anti-aliasing (AA) by shooting and averaging four rays per pixel through sub-pixel centers to smooth jagged edges."
+  presentation_title: "Rendered Images"
+  presentation_folder: "/assets/images/projects/raytrace/"
+  code_snippets_title: Code Samples
+  code_snippets:
+    - title: "Matte Shader"
+      content: |
+        ```c
+        shade_matte(intersection_point ip)
+        {
+            float c = 0;
+            float shadow_ray_origin_offset = 1.0e-3;
+            vec3 normal = ip.n;
+        
+            for (int i = 0; i < scene_num_lights; i++) {
+                light scene_light = scene_lights[i];
+        
+                float intensity = scene_light.intensity;
+                vec3 direction = v3_normalize(v3_subtract(scene_light.position, ip.p));
+        
+                float point_light_contribution = 0;
+        
+                vec3 shadow_ray_origin = v3_add(ip.p, v3_multiply(direction, shadow_ray_origin_offset));
+        
+                if (!shadow_check(shadow_ray_origin, direction)) {
+                    point_light_contribution = intensity * fmax(0, v3_dotprod(normal, direction));
+                }
+        
+                c += point_light_contribution;
+        
+                if (c >= 1) {
+                    c = 1;
+                    break;
+                }
+            }
+            c = fmin(1, c + scene_ambient_light);
+            return v3_create(c, c, c);
+        }
+        ```
+    - title: "Part of Phong Shader"
+      content: |
+        ```c
+        light scene_light = scene_lights[i];
+
+        float intensity = scene_light.intensity;
+        vec3 direction = v3_normalize(v3_subtract(scene_light.position, ip.p));
+
+        vec3 halfway_vec = v3_normalize(v3_add(ip.i, direction));
+
+        float diffuse_contribution = 0;
+        float specular_contribution = 0;
+
+        vec3 shadow_ray_origin = v3_add(ip.p, v3_multiply(direction, shadow_ray_origin_offset));
+
+        if (!shadow_check(shadow_ray_origin, direction)) {
+            diffuse_contribution = intensity * fmax(0, v3_dotprod(normal, direction));
+            specular_contribution = intensity * powf(v3_dotprod(normal, halfway_vec), alpha);
+        }
+
+        c_diffuse += diffuse_contribution;
+        c_specular += specular_contribution;
+        ```
