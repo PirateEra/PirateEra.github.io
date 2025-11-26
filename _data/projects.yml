@@ -27,31 +27,31 @@
     - "https://www.youtube.com/watch?v=osgt67R6ag0"
     - "https://www.youtube.com/watch?v=nzzOIViL7GU"
 
-- id: cargoprobe
-  date: "02-2023"
-  title: "Shipping Container Delay Prediction"
-  description: "Developed a regression model to predict shipping container ETA delays for CargoProbe, improving on their existing heuristics with a Random Forest."
-  tools: "Python | Scikit-learn | Random Forest | Data Analysis | Data Processing"
-  about: "This project for CargoProbe tackled supply chain disruptions by predicting shipping container delays. The provided data was complex, with over 330k entries, 23 columns, and significant missing values (e.g., 98% missing port data). After extensive data cleaning, feature engineering (creating 'time_left', 'time_spent', 'delay'), and imputation analysis, we compared several regression models. The final Random Forest model significantly outperformed CargoProbe's existing heuristics, reducing the Mean Absolute Error from 3.58 days to 1.20 days and the MSE from 54.75 to 7.92."
-  image: "/assets/images/cargoprobe.png"
-  url: "/pages/projects/cargoprobe/"
+- id: roger
+  title: "Robust AI-Generated Image Detection"
+  date: "05-2025"
+  description: "Developed ROGER, a robust, multi-modal model for AI-generated image detection that outperforms a state of the art model (SPAI) on augmented real-world images."
+  tools: "Python | PyTorch | Selenium | Deep Learning"
+  image: "/assets/images/roger_pipeline.png"
+  url: "/pages/projects/roger/"
   project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/cargoprobe.pdf"
+  project_pdf: "/assets/pdfs/roger.pdf"
+  github-link: https://github.com/PirateEra/ROGER
   contributions:
-    Data Cleaning and Preprocessing:
-      - "Analyzed and cleaned a large dataset of 331,956 entries, handling extensive missing values (NaNs) which constituted almost half the data."
-      - "Standardized timestamp data to UTC and converted string values to lowercase to resolve duplicates and misspellings."
-      - "Managed data structure by merging rows to fill missing values and removing duplicate updates to prevent model bias, resulting in 18,772 clean rows for training."
-      - "Performed a chronological train-test split (80-20) instead of random shuffling to prevent data leakage from the same trip appearing in both sets."
-    Feature Engineering and Data Analysis:
-      - "Engineered critical time-based features for regression, including 'time_left' (ETA - update_datetime) and 'time_spent' (update_datetime - date_added)."
-      - "Created the target variable 'delay' (ATA - ETA) to quantify the prediction error of CargoProbe's existing system."
-      - "Analyzed the cleaned data, finding that 84.53% of trips arrived late and 28.26% were delayed by 72 hours or more."
-      - "Applied One-Hot Encoding to categorical features like 'origin_city', 'vesselname', and 'activity' to prepare data for modeling."
-    Model Development and Evaluation:
-      - "Evaluated multiple regression models, including Linear Regression (which underfit) and Polynomial Regression (which was too computationally expensive)."
-      - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
-      - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
+    Data Pipeline and Robustness Testing:
+      - "Contributed to creating challenging datasets that simulate real-world image modifications to test model robustness."
+      - "Specifically implemented the social media screenshot simulation dataset, using Selenium to dynamically inject images into a custom HTML template."
+      - "Randomized numerous dynamic HTML elements (like/comment counts, usernames, captions) to ensure each generated screenshot was unique."
+    Model Development (ROGER):
+      - "Co-developed the ROGER (RObust AI-GEnerated image Recognizer) model to address the weaknesses of SPAI."
+      - "Designed and implemented the integrated model approach, a multi-modal architecture combining three complementary AID models."
+      - "Extracted and concatenated embeddings from SPAI (spectral), RINE (mid-level), and PatchCraft (texture) into a unified 768-dimensional feature vector."
+      - "Trained the final MLP classification head (2-layer, 1536-unit) on the combined embeddings to produce a single, robust prediction."
+    Performance Evaluation:
+      - "Successfully reproduced the original SPAI paper's results, verifying its baseline performance and high reproducibility."
+      - "Demonstrated that the created ROGER model significantly outperforms the baseline SPAI on all four challenging real-world datasets."
+  media:
+    - "/assets/images/roger_pipeline.png"
 
 - id: graphunderstanding
   date: "06-2025"
@@ -81,32 +81,129 @@
   presentation_title: "Visual Interface Screenshots"
   presentation_folder: "/assets/images/projects/graphvisualisation/"
 
-- id: hightide
-  date: "01-2017"
-  title: "High Tide"
-  description: "Co-Owner of a multiplayer survival game in Unity3D set in a medieval world."
-  image: "/assets/images/hightide_cover.png"
-  url: "/pages/projects/hightide"
-  tools: "Unity3D | C# | Networking | MySQL | Multiplayer"
-  about: |
-    High Tide was a self-started online multiplayer survival game co-developed with a friend. Players built castles and competed on official servers. The world underwent server wipes triggered by an incoming tide, forcing naval combat during these events. The project spanned 18-24 months and was my first serious game project, where I gained deep experience in Unity3D, networking, and gameplay systems.
-  media:
-    - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
-    - "https://www.youtube.com/watch?v=vE84TJUep0Y"
-    - "https://www.youtube.com/watch?v=6icDc453A_o"
-    - "/assets/videos/hightidebuildsystem.mp4"
-    - "/assets/videos/hightide_swimming.mp4"
-    - "/assets/videos/hightide_fighting.mp4"
+- id: medai
+  date: "10-2025"
+  title: "Improving 3D CT Organ Segmentation"
+  description: "An AI for Medical Imaging project that improved 3D segmentation of thoracic organs by systematically addressing severe class imbalance and model noise."
+  tools: "Python | PyTorch | Data Analysis | Loss Functions | Jupyter"
+  about: "This project's goal was to improve upon a baseline ENet model for 3D segmentation of organs (Heart, Aorta, Esophagus, Trachea) in CT scans. The primary challenges were severe class imbalance and noisy predictions. I analyzed and implemented various techniques, a key component of this was a deep dive into custom loss functions and data analysis to mitigate imbalance."
+  image: "/assets/images/ai4mi.png"
+  url: "/pages/projects/medai/"
+  github-link: https://github.com/PirateEra/ai4mi_project
   contributions:
-    Character Controller:
-      - "Developed a 3D character controller capable of multiple stances: passive, fighting, weapon-specific stances, swimming."
-      - "Implemented smooth stance switching and animation blending for gameplay fluidity."
-    Building System:
-      - "Created a modular building system using block shapes with smart snapping for correct materials."
-      - "Enabled players to construct structures in the world, saving them persistently on the server."
-    Networking & Multiplayer:
-      - "Implemented client-server architecture to sync player actions, bases, and inventories using MySQL."
-      - "Developed PVP mechanics allowing players to damage each other and interact dynamically in the world."
+    Data Analysis and Problem Identification:
+      - "Analyzed the voxel and slice distributions for all 40 participants, identifying severe class imbalance as a core limitation."
+      - "Quantified that background voxels made up 98.95% of the data, with rare classes like Esophagus (0.05%) and Trachea (0.03%) being vastly underrepresented."
+    Loss Function Experimentation:
+      - "Identified that the baseline cross-entropy loss struggled with rare classes."
+      - "Researched and implemented alternative loss functions to address the imbalance, including pure Dice loss and various hybrid (Dice + Cross Entropy) losses."
+      - "Analyzed the trade-offs of these losses, noting that Dice loss improved performance on rare classes by focusing on overall shape rather than individual voxels."
+    Model Improvement and Evaluation:
+      - "Contributed to the development of the final 'Best Model,' which integrated multiple improvements (2.5D, Multi-Window, SE blocks, NAdam)."
+      - "The final model achieved major gains in rare class segmentation."
+  presentation_title: "Impact of Loss Functions on Dice & HD95"
+  presentation_folder: "/assets/images/projects/medai/"
+
+- id: cargoprobe
+  date: "02-2023"
+  title: "Shipping Container Delay Prediction"
+  description: "Developed a regression model to predict shipping container ETA delays for CargoProbe, improving on their existing heuristics with a Random Forest."
+  tools: "Python | Scikit-learn | Random Forest | Data Analysis | Data Processing"
+  about: "This project for CargoProbe tackled supply chain disruptions by predicting shipping container delays. The provided data was complex, with over 330k entries, 23 columns, and significant missing values (e.g., 98% missing port data). After extensive data cleaning, feature engineering (creating 'time_left', 'time_spent', 'delay'), and imputation analysis, we compared several regression models. The final Random Forest model significantly outperformed CargoProbe's existing heuristics, reducing the Mean Absolute Error from 3.58 days to 1.20 days and the MSE from 54.75 to 7.92."
+  image: "/assets/images/cargoprobe.png"
+  url: "/pages/projects/cargoprobe/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/cargoprobe.pdf"
+  contributions:
+    Data Cleaning and Preprocessing:
+      - "Analyzed and cleaned a large dataset of 331,956 entries, handling extensive missing values (NaNs) which constituted almost half the data."
+      - "Standardized timestamp data to UTC and converted string values to lowercase to resolve duplicates and misspellings."
+      - "Managed data structure by merging rows to fill missing values and removing duplicate updates to prevent model bias, resulting in 18,772 clean rows for training."
+      - "Performed a chronological train-test split (80-20) instead of random shuffling to prevent data leakage from the same trip appearing in both sets."
+    Feature Engineering and Data Analysis:
+      - "Engineered critical time-based features for regression, including 'time_left' (ETA - update_datetime) and 'time_spent' (update_datetime - date_added)."
+      - "Created the target variable 'delay' (ATA - ETA) to quantify the prediction error of CargoProbe's existing system."
+      - "Analyzed the cleaned data, finding that 84.53% of trips arrived late and 28.26% were delayed by 72 hours or more."
+      - "Applied One-Hot Encoding to categorical features like 'origin_city', 'vesselname', and 'activity' to prepare data for modeling."
+    Model Development and Evaluation:
+      - "Evaluated multiple regression models, including Linear Regression (which underfit) and Polynomial Regression (which was too computationally expensive)."
+      - "Selected, trained, and tuned a Random Forest regression model as the final, most robust solution."
+      - "Used RandomizedSearchCV to find optimal hyperparameters for the Random Forest, balancing the model and reducing the MSE for outliers."
+
+- id: "ood-generalization"
+  title: "ACTS"
+  date: "05-2025"
+  title: "OoD Prediction for Emotion Transfer"
+  description: "A transfer learning project using Task and Text Embeddings to predict model performance across different emotion classification datasets (Out-of-Distribution, OoD)."
+  tools: "Python | DeBERTaV3-base | Task Embeddings | Transfer Learning"
+  about: "The core challenge addressed is the difficulty of generalizing emotion classifiers across datasets due to varied labeling schemes. This project predicted the effectiveness of intermediate dataset transfer by building a regression model. The prediction variables were based on the similarity between datasets, quantified using class-conditional Task and Text Embeddings derived from gradient information, to determine which datasets serve as effective pre-training corpora."
+  image: "/assets/images/atcs.png"
+  url: "/pages/projects/ood-generalisation/"
+  github-link: https://github.com/PirateEra/ood-generalization-transfer
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/ood-generalization.pdf"
+  contributions:
+    Transfer Learning and Model Prediction:
+      - "Designed a pipeline to predict transfer performance (OoD Generalization) between emotion datasets without requiring full model evaluation."
+      - "Fine-tuned a DeBERTaV3-base transformer encoder on 10 source emotion datasets in isolation to learn dataset-specific text representations."
+      - "Developed a regression model to predict transferability loss based on dataset similarity metrics."
+    Advanced Representation Learning:
+      - "Implemented the construction of Task Embeddings using the squared gradient norm of the frozen encoder to capture dataset-specific structure."
+      - "Created class-conditional representations for each emotion in each dataset, using both Task and Text Embeddings to quantify dataset similarity."
+    Data Analysis and Visualization:
+      - "Applied dimensionality reduction techniques to visualize the constructed Task Embeddings and discover structure within different emotional classification corpora."
+      - "Addressed challenges from diverse theoretical frameworks and varied, non-overlapping label sets across multiple emotional classification corpora."
+  media:
+    - "/assets/images/atcs_poster.jpg"
+
+- id: pragmatics
+  date: "06-2024"
+  title: "Diverse Sampling for Referential Games"
+  description: "Bachelor thesis on the impact of decoding algorithms on candidate diversity and accuracy in pragmatic reasoning."
+  tools: "Python | NLP | LSTM | Decoding Algorithms"
+  about: "This thesis investigates which decoding algorithm generates the best candidate utterances for a pragmatic speaker in a referential image game. The speaker must describe a target image to a listener to distinguish it from two distractors. The study compares Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding on 'easy' (random) and 'hard' (visually/textually similar) distractors. The findings show that candidate diversity is crucial for success, and while DBD is the most promising for accuracy, it suffers from high computational costs compared to Multinomial Sampling."
+  image: "/assets/images/sampling.png"
+  url: "/pages/projects/pragmatics/"
+  github-link: "https://github.com/PirateEra/ToM-Language-Acquisition"
+  project_pdf_title: "Bachelor Thesis"
+  project_pdf: "/assets/pdfs/sampling.pdf"
+  contributions:
+    Pragmatic Model Implementation:
+      - "Implemented a full pragmatic reasoning pipeline based on the Rational Speech Act framework."
+      - "Constructed a Pragmatic Speaker that samples candidates from a Literal Speaker (LSTM) and re-ranks them using a Literal Listener (ResNet/ROBERTa)."
+    Decoding Algorithm Comparison:
+      - "Implemented and systematically compared three distinct decoding algorithms: Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding."
+      - "Analyzed the trade-offs between candidate diversity (measured by Distinct n-grams) and model performance (measured by Accuracy and Entropy)."
+    Experimental Design and Analysis:
+      - "Designed an evaluation setup using the MS COCO dataset with two distinct difficulty levels: 'easy' (random distractors) and 'hard' (semantically similar distractors)."
+      - "Created the 'hard' dataset by selecting distractors based on high visual and textual cosine similarity."
+  media:
+    - "/assets/images/sampling.png"
+
+- id: affiliaterobot
+  date: "07-2023"
+  title: "Affiliate Robot"
+  description: "AI-driven web application that automates the generation of affiliate marketing articles using web scraping, dynamic prompting, and the OpenAI API."
+  tools: "Python | PHP | OpenAI API | Web Scraping | HTML/CSS/JS"
+  about: "Developed the core logic for Affiliaterobot.nl, a Minimum Viable Product aimed at automating content creation for affiliate marketers. The system generated 'Top X' style articles by dynamically gathering product data via web scraping and using prompt engineering to synthesize the information into a structured, engaging article format. The site integrated user-specific affiliate links for revenue generation."
+  image: "/assets/images/affiliate_robot_cover.png"
+  url: "/pages/projects/affiliate-robot/"
+  project_pdf_title: "Technical Report"
+  project_pdf: "/assets/pdfs/affiliaterobot.pdf"
+  contributions:
+    AI and Dynamic Prompt Engineering:
+      - "Authored the primary logic for the Article Generator, orchestrating the sequence from data acquisition to final LLM output."
+      - "Implemented dynamic prompt creation using web-scraped data to guide the OpenAI API in generating contextually rich and accurate 'Top 10' style articles."
+      - "Focused on prompt engineering to ensure the LLM output was structured correctly (e.g., using proper HTML) and aligned with the article's tone and format."
+    Full-Stack Backend Integration:
+      - "Developed a custom WordPress plugin in PHP to manage the entire back-end logic, including handling user input, and triggering the article generation process."
+      - "Integrated the Python web scraping module with the PHP back-end to seamlessly pass scraped product data for prompt construction."
+    Data Acquisition and Web Scraping:
+      - "Designed and implemented the Python web scraping module targeting Bol.com to efficiently gather real-time data (product names, descriptions, prices, etc.) for dynamic content."
+    Front-End Logic and MVP Development:
+      - "Implemented the core article generator functionality using a combination of HTML, CSS, JavaScript, and PHP to structure the final article presentation on the front-end, supporting the full MVP requirements (account/login, options)."
+  presentation_title: "Visual Interface Screenshots"
+  presentation_folder: "/assets/slides/affiliaterobot/"
 
 # - id: hightide
   # logo: "/assets/images/projects/mock/mockimg.png"
@@ -151,130 +248,6 @@
   #       def example_code(speed):
   #           print(f"Moving at {speed} speed!")
   #       ```
-
-- id: "ood-generalization"
-  title: "ACTS"
-  date: "05-2025"
-  title: "OoD Prediction for Emotion Transfer"
-  description: "A transfer learning project using Task and Text Embeddings to predict model performance across different emotion classification datasets (Out-of-Distribution, OoD)."
-  tools: "Python | DeBERTaV3-base | Task Embeddings | Transfer Learning"
-  about: "The core challenge addressed is the difficulty of generalizing emotion classifiers across datasets due to varied labeling schemes. This project predicted the effectiveness of intermediate dataset transfer by building a regression model. The prediction variables were based on the similarity between datasets, quantified using class-conditional Task and Text Embeddings derived from gradient information, to determine which datasets serve as effective pre-training corpora."
-  image: "/assets/images/atcs.png"
-  url: "/pages/projects/ood-generalisation/"
-  github-link: https://github.com/PirateEra/ood-generalization-transfer
-  project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/ood-generalization.pdf"
-  contributions:
-    Transfer Learning and Model Prediction:
-      - "Designed a pipeline to predict transfer performance (OoD Generalization) between emotion datasets without requiring full model evaluation."
-      - "Fine-tuned a DeBERTaV3-base transformer encoder on 10 source emotion datasets in isolation to learn dataset-specific text representations."
-      - "Developed a regression model to predict transferability loss based on dataset similarity metrics."
-    Advanced Representation Learning:
-      - "Implemented the construction of Task Embeddings using the squared gradient norm of the frozen encoder to capture dataset-specific structure."
-      - "Created class-conditional representations for each emotion in each dataset, using both Task and Text Embeddings to quantify dataset similarity."
-    Data Analysis and Visualization:
-      - "Applied dimensionality reduction techniques to visualize the constructed Task Embeddings and discover structure within different emotional classification corpora."
-      - "Addressed challenges from diverse theoretical frameworks and varied, non-overlapping label sets across multiple emotional classification corpora."
-  media:
-    - "/assets/images/atcs_poster.jpg"
-
-- id: affiliaterobot
-  date: "07-2023"
-  title: "Affiliate Robot"
-  description: "AI-driven web application that automates the generation of affiliate marketing articles using web scraping, dynamic prompting, and the OpenAI API."
-  tools: "Python | PHP | OpenAI API | Web Scraping | HTML/CSS/JS"
-  about: "Developed the core logic for Affiliaterobot.nl, a Minimum Viable Product aimed at automating content creation for affiliate marketers. The system generated 'Top X' style articles by dynamically gathering product data via web scraping and using prompt engineering to synthesize the information into a structured, engaging article format. The site integrated user-specific affiliate links for revenue generation."
-  image: "/assets/images/affiliate_robot_cover.png"
-  url: "/pages/projects/affiliate-robot/"
-  project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/affiliaterobot.pdf"
-  contributions:
-    AI and Dynamic Prompt Engineering:
-      - "Authored the primary logic for the Article Generator, orchestrating the sequence from data acquisition to final LLM output."
-      - "Implemented dynamic prompt creation using web-scraped data to guide the OpenAI API in generating contextually rich and accurate 'Top 10' style articles."
-      - "Focused on prompt engineering to ensure the LLM output was structured correctly (e.g., using proper HTML) and aligned with the article's tone and format."
-    Full-Stack Backend Integration:
-      - "Developed a custom WordPress plugin in PHP to manage the entire back-end logic, including handling user input, and triggering the article generation process."
-      - "Integrated the Python web scraping module with the PHP back-end to seamlessly pass scraped product data for prompt construction."
-    Data Acquisition and Web Scraping:
-      - "Designed and implemented the Python web scraping module targeting Bol.com to efficiently gather real-time data (product names, descriptions, prices, etc.) for dynamic content."
-    Front-End Logic and MVP Development:
-      - "Implemented the core article generator functionality using a combination of HTML, CSS, JavaScript, and PHP to structure the final article presentation on the front-end, supporting the full MVP requirements (account/login, options)."
-  presentation_title: "Visual Interface Screenshots"
-  presentation_folder: "/assets/slides/affiliaterobot/"
-
-- id: roger
-  title: "Robust AI-Generated Image Detection"
-  date: "05-2025"
-  description: "Developed ROGER, a robust, multi-modal model for AI-generated image detection that outperforms a state of the art model (SPAI) on augmented real-world images."
-  tools: "Python | PyTorch | Selenium | Deep Learning"
-  image: "/assets/images/roger_pipeline.png"
-  url: "/pages/projects/roger/"
-  project_pdf_title: "Technical Report"
-  project_pdf: "/assets/pdfs/roger.pdf"
-  github-link: https://github.com/PirateEra/ROGER
-  contributions:
-    Data Pipeline and Robustness Testing:
-      - "Contributed to creating challenging datasets that simulate real-world image modifications to test model robustness."
-      - "Specifically implemented the social media screenshot simulation dataset, using Selenium to dynamically inject images into a custom HTML template."
-      - "Randomized numerous dynamic HTML elements (like/comment counts, usernames, captions) to ensure each generated screenshot was unique."
-    Model Development (ROGER):
-      - "Co-developed the ROGER (RObust AI-GEnerated image Recognizer) model to address the weaknesses of SPAI."
-      - "Designed and implemented the integrated model approach, a multi-modal architecture combining three complementary AID models."
-      - "Extracted and concatenated embeddings from SPAI (spectral), RINE (mid-level), and PatchCraft (texture) into a unified 768-dimensional feature vector."
-      - "Trained the final MLP classification head (2-layer, 1536-unit) on the combined embeddings to produce a single, robust prediction."
-    Performance Evaluation:
-      - "Successfully reproduced the original SPAI paper's results, verifying its baseline performance and high reproducibility."
-      - "Demonstrated that the created ROGER model significantly outperforms the baseline SPAI on all four challenging real-world datasets."
-  media:
-    - "/assets/images/roger_pipeline.png"
-
-- id: medai
-  date: "10-2025"
-  title: "Improving 3D CT Organ Segmentation"
-  description: "An AI for Medical Imaging project that improved 3D segmentation of thoracic organs by systematically addressing severe class imbalance and model noise."
-  tools: "Python | PyTorch | Data Analysis | Loss Functions | Jupyter"
-  about: "This project's goal was to improve upon a baseline ENet model for 3D segmentation of organs (Heart, Aorta, Esophagus, Trachea) in CT scans. The primary challenges were severe class imbalance and noisy predictions. I analyzed and implemented various techniques, a key component of this was a deep dive into custom loss functions and data analysis to mitigate imbalance."
-  image: "/assets/images/ai4mi.png"
-  url: "/pages/projects/medai/"
-  github-link: https://github.com/PirateEra/ai4mi_project
-  contributions:
-    Data Analysis and Problem Identification:
-      - "Analyzed the voxel and slice distributions for all 40 participants, identifying severe class imbalance as a core limitation."
-      - "Quantified that background voxels made up 98.95% of the data, with rare classes like Esophagus (0.05%) and Trachea (0.03%) being vastly underrepresented."
-    Loss Function Experimentation:
-      - "Identified that the baseline cross-entropy loss struggled with rare classes."
-      - "Researched and implemented alternative loss functions to address the imbalance, including pure Dice loss and various hybrid (Dice + Cross Entropy) losses."
-      - "Analyzed the trade-offs of these losses, noting that Dice loss improved performance on rare classes by focusing on overall shape rather than individual voxels."
-    Model Improvement and Evaluation:
-      - "Contributed to the development of the final 'Best Model,' which integrated multiple improvements (2.5D, Multi-Window, SE blocks, NAdam)."
-      - "The final model achieved major gains in rare class segmentation."
-  presentation_title: "Impact of Loss Functions on Dice & HD95"
-  presentation_folder: "/assets/images/projects/medai/"
-
-- id: pragmatics
-  date: "06-2024"
-  title: "Diverse Sampling for Referential Games"
-  description: "Bachelor thesis on the impact of decoding algorithms on candidate diversity and accuracy in pragmatic reasoning."
-  tools: "Python | NLP | LSTM | Decoding Algorithms"
-  about: "This thesis investigates which decoding algorithm generates the best candidate utterances for a pragmatic speaker in a referential image game. The speaker must describe a target image to a listener to distinguish it from two distractors. The study compares Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding on 'easy' (random) and 'hard' (visually/textually similar) distractors. The findings show that candidate diversity is crucial for success, and while DBD is the most promising for accuracy, it suffers from high computational costs compared to Multinomial Sampling."
-  image: "/assets/images/sampling.png"
-  url: "/pages/projects/pragmatics/"
-  github-link: "https://github.com/PirateEra/ToM-Language-Acquisition"
-  project_pdf_title: "Bachelor Thesis"
-  project_pdf: "/assets/pdfs/sampling.pdf"
-  contributions:
-    Pragmatic Model Implementation:
-      - "Implemented a full pragmatic reasoning pipeline based on the Rational Speech Act framework."
-      - "Constructed a Pragmatic Speaker that samples candidates from a Literal Speaker (LSTM) and re-ranks them using a Literal Listener (ResNet/ROBERTa)."
-    Decoding Algorithm Comparison:
-      - "Implemented and systematically compared three distinct decoding algorithms: Multinomial Sampling, Beam Decoding, and Diverse Beam Decoding."
-      - "Analyzed the trade-offs between candidate diversity (measured by Distinct n-grams) and model performance (measured by Accuracy and Entropy)."
-    Experimental Design and Analysis:
-      - "Designed an evaluation setup using the MS COCO dataset with two distinct difficulty levels: 'easy' (random distractors) and 'hard' (semantically similar distractors)."
-      - "Created the 'hard' dataset by selecting distractors based on high visual and textual cosine similarity."
-  media:
-    - "/assets/images/sampling.png"
 
 - id: shaders
   date: "10-2023"
@@ -417,6 +390,33 @@
         c_diffuse += diffuse_contribution;
         c_specular += specular_contribution;
         ```
+
+- id: hightide
+  date: "01-2017"
+  title: "High Tide"
+  description: "Co-Owner of a multiplayer survival game in Unity3D set in a medieval world."
+  image: "/assets/images/hightide_cover.png"
+  url: "/pages/projects/hightide"
+  tools: "Unity3D | C# | Networking | MySQL | Multiplayer"
+  about: |
+    High Tide was a self-started online multiplayer survival game co-developed with a friend. Players built castles and competed on official servers. The world underwent server wipes triggered by an incoming tide, forcing naval combat during these events. The project spanned 18-24 months and was my first serious game project, where I gained deep experience in Unity3D, networking, and gameplay systems.
+  media:
+    - "https://www.youtube.com/watch?v=SvbI4OyGvQU"
+    - "https://www.youtube.com/watch?v=vE84TJUep0Y"
+    - "https://www.youtube.com/watch?v=6icDc453A_o"
+    - "/assets/videos/hightidebuildsystem.mp4"
+    - "/assets/videos/hightide_swimming.mp4"
+    - "/assets/videos/hightide_fighting.mp4"
+  contributions:
+    Character Controller:
+      - "Developed a 3D character controller capable of multiple stances: passive, fighting, weapon-specific stances, swimming."
+      - "Implemented smooth stance switching and animation blending for gameplay fluidity."
+    Building System:
+      - "Created a modular building system using block shapes with smart snapping for correct materials."
+      - "Enabled players to construct structures in the world, saving them persistently on the server."
+    Networking & Multiplayer:
+      - "Implemented client-server architecture to sync player actions, bases, and inventories using MySQL."
+      - "Developed PVP mechanics allowing players to damage each other and interact dynamically in the world."
 
 - id: boss-texture-tool
   noshow: true
