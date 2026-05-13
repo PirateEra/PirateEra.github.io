@@ -19,9 +19,9 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "David Werkhoven"
 title_separator          : "-"
-subtitle                 : MSc AI Student & Game Developer
+subtitle                 : Machine Learning Engineer & Game Developer
 name                     : "David Werkhoven"
-description              : "David Werkhoven's portfolio. A game developer and MSc AI student specializing in game development, and machine learning."
+description              : "David Werkhoven's portfolio. Machine Learning Engineer and Game Developer."
 url                      : "https://PirateEra.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "PirateEra/PirateEra.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -114,9 +114,9 @@ analytics:
 # Site Author
 author:
   name             : "David Werkhoven"
-  avatar           : "/assets/images/pasfoto.png"
-  bio              : "Game Developer and MSc AI student with experience in data analysis, machine learning, and software/game design. Skilled in Python, Java, and SQL for building tools, predictive models, and game systems. Passionate about the full pipeline of game creation: designing game mechanics, 3D modeling, and analyzing player data with AI. Developer of the MMORPG *Pirate-Era*, built using Minecraft as its game engine."
-  personal-title   : "I'm a MSc AI Student & independent Game Developer"
+  avatar           : "/assets/images/pasfotoo.png"
+  bio              : "Machine Learning Engineer with a MSc Specialisation in Artificial Intelligence and Game Developer with experience in data analysis, machine learning, and software/game design. Skilled in Python, Java, and SQL for building tools, predictive models, and game systems. Passionate about the full pipeline of game creation: designing game mechanics, 3D modeling, and analyzing player data with AI. Developer of the MMORPG *Pirate-Era*, built using Minecraft as its game engine."
+  personal-title   : "I'm a Machine Learning Engineer & independent Game Developer"
   location         : "Utrecht, The Netherlands"
   email            : davidwerkhoven2806@gmail.com
   links:
