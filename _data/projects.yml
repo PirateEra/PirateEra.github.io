@@ -44,7 +44,7 @@
   url: "/pages/projects/poker-equity-mlops/"
   github-link: https://github.com/PirateEra/poker-equity-mlops
   contributions:
-    "Skills this project shows (for recruiters)":
+    "Skills this project shows":
       - "**MLOps / production ML:** end-to-end path from scheduled training to a live prediction API with monitoring."
       - "**Orchestration:** Airflow DAGs for preprocess, feature engineering, training, and model reload."
       - "**Model registry:** MLflow tracking for runs, metrics (MSE, R²), and model artifacts."
