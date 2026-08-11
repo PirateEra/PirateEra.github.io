@@ -114,13 +114,14 @@ body {
 }
 
 .author-avatar {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   flex-shrink: 0;
-  box-shadow: 0 0 0 2px $color-border-glow, 0 0 24px $color-accent-glow;
-  border: 2px solid $color-surface;
+  box-shadow: 0 0 0 2px $color-border-glow, 0 0 28px $color-accent-glow;
+  border: 3px solid $color-surface;
 }
 
 .author-text {
