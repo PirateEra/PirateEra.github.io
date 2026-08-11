@@ -27,6 +27,52 @@
     - "https://www.youtube.com/watch?v=osgt67R6ag0"
     - "https://www.youtube.com/watch?v=nzzOIViL7GU"
 
+- id: poker-equity-mlops
+  date: "08-2026"
+  title: "Poker Equity MLOps Pipeline"
+  description: "End-to-end MLOps system: schedule training, register models, serve predictions, and monitor drift with Prometheus, Grafana, and Alertmanager. Built to showcase productionization skills, not model research."
+  tools: "Python | PySpark | Airflow | MLflow | FastAPI | Docker | Kubernetes | Prometheus | Grafana | Pytest | GitHub Actions"
+  about: >
+    This project is an MLOps portfolio piece. The domain is a poker win-equity regressor, but that is only used to showcase the MLOps system.
+    I built it to show I can take a model from training into a monitored service, which is what many ML Engineers and Applied AI roles ask for beyond notebook work.
+    My MSc already covers modeling. Here the focus is the production path: train, package, schedule, serve, observe.
+    The stack runs locally with Docker Compose. Training is orchestrated in Airflow and logged to MLflow.
+    A FastAPI service loads the latest model and exposes /predict plus /metrics.
+    Prometheus scrapes API metrics, a drift job pushes PSI scores through Pushgateway, Alertmanager receives alert rules, and Grafana shows the dashboard.
+    There is also a minimal Kubernetes Deployment and Service for the API, plus GitHub Actions CI for unit tests and image builds.
+    Code: https://github.com/PirateEra/poker-equity-mlops
+  image: "/assets/images/poker-equity-mlops-cover.png"
+  url: "/pages/projects/poker-equity-mlops/"
+  github-link: https://github.com/PirateEra/poker-equity-mlops
+  contributions:
+    "Skills this project shows (for recruiters)":
+      - "**MLOps / production ML:** end-to-end path from scheduled training to a live prediction API with monitoring."
+      - "**Orchestration:** Airflow DAGs for preprocess, feature engineering, training, and model reload."
+      - "**Model registry:** MLflow tracking for runs, metrics (MSE, R²), and model artifacts."
+      - "**API serving:** FastAPI service with health checks, prediction endpoint, and Prometheus metrics."
+      - "**Observability:** Prometheus, Pushgateway, Alertmanager, Grafana, plus PSI data-drift monitoring."
+      - "**Containers & deployment:** Docker Compose full stack, Dockerfile for the app, minimal Kubernetes for the API."
+      - "**Data engineering:** PySpark feature pipeline and MySQL as the batch data store."
+      - "**Quality & CI:** Pytest unit tests (features, drift, API metrics) and GitHub Actions (tests + Docker build)."
+      - "**Secrets hygiene:** local `.env` for credentials. No passwords committed to the repo."
+    "What I built":
+      - "Packaged the full local stack in Docker Compose (API, MLflow, Airflow, MySQL, Prometheus, Alertmanager, Grafana, drift job)."
+      - "Wrote Airflow training DAGs that run preprocessing, feature engineering, and training in Docker, then reload the API."
+      - "Served predictions with FastAPI, loading the latest MLflow model and exposing `/predict`, `/health`, and `/metrics`."
+      - "Added custom Prometheus metrics (prediction count, equity distribution, inference latency, errors) and a Grafana dashboard."
+      - "Implemented a PSI drift job that compares baseline vs live feature/prediction distributions and pushes gauges to Pushgateway."
+      - "Defined Prometheus alert rules (API errors, high drift, high inference latency) and wired Alertmanager."
+      - "Added a minimal Kubernetes Deployment + Service for the API, with docs for kind/minikube."
+      - "Set up GitHub Actions CI to run unit tests (Python 3.13 + JDK 17 for PySpark) and build the serving image on push/PR."
+    "Scope note":
+      - "This is not meant to showcase novel ML research. The model is a straightforward Random Forest equity regressor."
+      - "The value is the system around it: reproducible training, serving, monitoring, alerting, containers, and CI."
+  presentation_title: "System screenshots (train → serve → observe)"
+  presentation_folder: "/assets/images/projects/poker-equity-mlops/"
+  media:
+    - "/assets/images/projects/poker-equity-mlops/grafana.png"
+    - "/assets/images/projects/poker-equity-mlops/airflow.png"
+
 - id: roger
   title: "Robust AI-Generated Image Detection"
   date: "05-2025"
