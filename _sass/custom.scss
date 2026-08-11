@@ -1,3 +1,24 @@
+// Design tokens (portfolio surfaces in this file)
+$color-page-wash: #f3f4f6;
+$color-surface: #fff;
+$color-accent: #1e3a5f;
+$color-link: #2563a8;
+$color-text: #1e293b;
+$color-text-muted: #64748b;
+$color-border: #e2e8f0;
+$color-slide-frame: #0f172a0d;
+
+$radius-card: 12px;
+$radius-pill: 999px;
+
+$shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08);
+$shadow-card-hover: 0 8px 24px rgba(15, 23, 42, 0.12);
+
+$font-ui: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-badge: 0.8rem;
+
+$transition-fast: 0.2s ease;
+
 /// INDEX HTML
 .custom-home-wrapper {
   position: relative;

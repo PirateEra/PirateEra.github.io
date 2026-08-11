@@ -25,15 +25,15 @@
   poster_pdf_title: "NCCV 2026 Poster"
   poster_pdf: "/assets/pdfs/msc-thesis-nccv-poster.pdf"
   contributions:
-    "Research skills (Max Planck Institute for Psycholinguistics)":
+    "Research skills":
       - "**Research problem framing:** turned a messy SOTA landscape into clear gaps (monadic vs dyadic, beat vs semantic, non-causal vs causal) and wrote concrete research questions (RQ1-RQ4) with measurable objectives."
-      - "**Literature to method:** mapped related work (SemTalk, DyaDiT, EMAGE, diffusion and flow models, and others) into design choices instead of copying one paper end to end."
+      - "**Literature to method:** mapped related work (SemTalk, DyaDiT, EMAGE, diffusion and flow models, and others) into design choices instead of copying or building upon one paper."
       - "**Dataset science / experimental hygiene:** designed algorithmic curation for noisy multi-vendor dyadic data (hand boundary filtering, motion-intensity thresholding, VAD padding, role-adaptive speaking/listening segmentation) so models train on signal, not tracking junk."
       - "**Hypothesis-driven modeling:** two-stage discrete motion tokens plus causal generation. Tested whether continuous personality and partner audio actually help via progressive ablations (timing/VAD, then semantics, then persona, then the full dyadic loop)."
       - "**Quantitative evaluation design:** Fréchet distance, motion diversity, beat consistency. Monadic vs dyadic setups. Short (10s) vs long (30s) clips for stability."
       - "**Qualitative scientific judgment:** built fast visual loops because MSE alone lies for motion. Audited reconstructions, listening poses, and tracking-artifact denoising by eye."
       - "**Scientific communication:** wrote the full MSc thesis with clear contribution claims and honest limitations. Presented a poster at NCCV 2026 to the research community."
-      - "**Independent research ownership:** end-to-end ownership of pipeline, models, eval, and open release, intended as a baseline for a new dataset at the Max Planck Institute for Psycholinguistics."
+      - "**Independent research ownership:** Ownership of pipeline, models, eval, and open release, intended as a baseline for a new dataset at the Max Planck Institute for Psycholinguistics."
     "ML / systems skills":
       - "**Deep learning at scale:** multi-stage neural pipelines trained from scratch, not notebook demos."
       - "**SMPL-H / 3D human motion:** parametric body models, 6D rotations, forward kinematics, vertex losses through a frozen SMPL-H layer."
