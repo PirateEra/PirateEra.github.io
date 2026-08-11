@@ -1,25 +1,24 @@
 /* ==========================================================================
-   Dark skin
+   Dark skin — charcoal + cyan neon (aligned site-wide)
    ========================================================================== */
 
 /* Colors */
-$background-color: #FFFFFF !default;
-$header-color: #121212 !default;
-$header-text-color: #eaeaea !default;
-$text-color: #333333 !default;
-$primary-color: #eaeaea !default;
-$border-color: mix(#fff, $header-color, 20%) !default;
-$code-background-color: #1e1e1e !default;
-$code-background-color-dark: #1e1e1e !default;
-$form-background-color: #1e1e1e !default;
-$footer-background-color: #1e1e1e !default;
-$footer-text-color: #eaeaea !default;
-// $link-color: mix($primary-color, $text-color, 40%) !default;
-$link-color: $text-color !default;
-$link-color-hover: mix(#fff, $link-color, 25%) !default;
-$link-color-visited: mix(#000, $link-color, 25%) !default;
+$background-color: #0e1014 !default;
+$header-color: #08090c !default;
+$header-text-color: #e8eaed !default;
+$text-color: #e8eaed !default;
+$primary-color: #5eead4 !default;
+$border-color: #2a2f3a !default;
+$code-background-color: #161a21 !default;
+$code-background-color-dark: #12151b !default;
+$form-background-color: #161a21 !default;
+$footer-background-color: #08090c !default;
+$footer-text-color: #9aa3b2 !default;
+$link-color: #5eead4 !default;
+$link-color-hover: #99f6e4 !default;
+$link-color-visited: #2dd4bf !default;
 $masthead-link-color: $header-text-color !default;
-$masthead-link-color-hover: mix(#000, $header-text-color, 20%) !default;
+$masthead-link-color-hover: $primary-color !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 
 .author__urls.social-icons i,

@@ -1,30 +1,55 @@
-// Design tokens
-$color-page-wash: #f3f4f6;
-$color-surface: #fff;
-$color-accent: #1e3a5f;
-$color-link: #2563a8;
-$color-text: #1e293b;
-$color-text-muted: #64748b;
-$color-border: #e2e8f0;
-$color-slide-frame: rgba(15, 23, 42, 0.06);
-$color-badge-bg: #eef2f7;
-$color-badge-text: #334155;
+// Design tokens — charcoal + cyan neon (matches dark skin)
+$color-page: #0e1014;
+$color-surface: #171a21;
+$color-surface-raised: #1c212b;
+$color-accent: #5eead4;
+$color-accent-soft: rgba(94, 234, 212, 0.16);
+$color-accent-glow: rgba(94, 234, 212, 0.35);
+$color-accent-dim: #2dd4bf;
+$color-text: #e8eaed;
+$color-text-muted: #9aa3b2;
+$color-border: #2a2f3a;
+$color-border-glow: rgba(94, 234, 212, 0.45);
+$color-slide-frame: #12151b;
+$color-badge-bg: rgba(94, 234, 212, 0.1);
+$color-badge-text: #99f6e4;
+$color-btn: #1c212b;
+$color-btn-solid: #5eead4;
+$color-btn-solid-text: #0e1014;
 
-$radius-card: 12px;
+$radius-card: 14px;
 $radius-pill: 999px;
 
-$shadow-card: 0 2px 10px rgba(15, 23, 42, 0.08);
-$shadow-card-hover: 0 10px 28px rgba(15, 23, 42, 0.14);
+$shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 20px rgba(94, 234, 212, 0.08);
+$shadow-card-hover: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 36px rgba(94, 234, 212, 0.28);
+$shadow-panel: 0 6px 20px rgba(0, 0, 0, 0.3);
 
 $font-ui: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size-badge: 0.72rem;
+$transition-fast: 0.22s ease;
 
-$transition-fast: 0.2s ease;
+html {
+  scroll-behavior: smooth;
+}
 
-// Soft wash behind content; cards stay white on top
+body {
+  background-color: $color-page;
+  color: $color-text;
+  font-family: $font-ui;
+}
+
+// Use full #main width (theme reserves empty sidebar space otherwise)
+.layout--single #main > .page {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding-inline-end: 0;
+}
+
 .page,
-.layout--single {
-  background-color: $color-page-wash;
+.layout--single,
+.initial-content {
+  background-color: $color-page;
 }
 
 .page__content {
@@ -34,25 +59,44 @@ $transition-fast: 0.2s ease;
 
 .page__content h1,
 .page__content h2,
-.page__content h3 {
+.page__content h3,
+.page__title,
+.page__title a {
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   letter-spacing: -0.02em;
   font-weight: 600;
 }
 
-/// INDEX HTML — full-bleed so the 3-up grid escapes the theme column
+.page__content h2,
+.page__content h3 {
+  border-bottom-color: $color-border;
+}
+
+.page__content a {
+  color: $color-accent;
+}
+
+.page__content a:hover {
+  color: #99f6e4;
+}
+
+.masthead,
+.greedy-nav {
+  background-color: #08090c;
+}
+
+.page__footer {
+  background-color: #08090c;
+  color: $color-text-muted;
+}
+
+/// Home — no bleed, grid lives inside the content column
 .custom-home-wrapper {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  max-width: 100vw;
-  padding: 2.5rem 0 3rem;
-  box-sizing: border-box;
-  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 1.5rem 0 2.5rem;
 }
 
 .author-intro {
@@ -60,25 +104,28 @@ $transition-fast: 0.2s ease;
   align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
-  margin: 0 auto 2rem;
-  padding: 0 2rem;
-  max-width: 1100px;
-  justify-content: center;
+  margin: 0 0 2rem;
+  padding: 1.5rem 1.75rem;
+  justify-content: flex-start;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+  box-shadow: $shadow-panel, 0 0 28px rgba(94, 234, 212, 0.06);
 }
 
 .author-avatar {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: $shadow-card;
-  border: 3px solid $color-surface;
+  box-shadow: 0 0 0 2px $color-border-glow, 0 0 24px $color-accent-glow;
+  border: 2px solid $color-surface;
 }
 
 .author-text {
   max-width: 640px;
-  flex: 1 1 420px;
+  flex: 1 1 360px;
   font-family: $font-ui;
   color: $color-text;
 }
@@ -86,9 +133,9 @@ $transition-fast: 0.2s ease;
 .author-text h1 {
   margin: 0 0 0.35rem;
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   font-weight: 700;
-  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.7rem, 2.4vw, 2.15rem);
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
@@ -97,11 +144,13 @@ $transition-fast: 0.2s ease;
   line-height: 1.65;
   margin-bottom: 0.65rem;
   font-size: 1.02rem;
+  color: $color-text;
 }
 
 .author-text > p:first-of-type {
-  color: $color-text-muted;
+  color: $color-accent;
   font-size: 1.05rem;
+  font-weight: 500;
 }
 
 .author-links {
@@ -110,41 +159,44 @@ $transition-fast: 0.2s ease;
 
 .author-links a {
   text-decoration: none;
-  color: $color-link;
+  color: $color-accent;
   font-weight: 500;
-  transition: color $transition-fast;
+  transition: color $transition-fast, text-shadow $transition-fast;
 }
 
 .author-links a:hover {
   text-decoration: underline;
-  color: $color-accent;
+  color: #99f6e4;
+  text-shadow: 0 0 12px $color-accent-glow;
 }
 
-/// Project cards (home + /projects/) — keep wide grid
+hr {
+  border: 0;
+  border-top: 1px solid $color-border;
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.15);
+}
+
+/// Project cards — 3-up grid, neon halo
 .project-grid-wrapper {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  max-width: 100vw;
-  padding: 2.5rem 0 3rem;
-  box-sizing: border-box;
-  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 1.5rem 0 2.5rem;
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   align-items: stretch;
 }
 
 .project-card {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -154,25 +206,48 @@ $transition-fast: 0.2s ease;
   color: inherit;
   border-radius: $radius-card;
   border: 1px solid $color-border;
+  background: $color-surface;
   box-shadow: $shadow-card;
   transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast;
-  background: $color-surface;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(94, 234, 212, 0.55),
+    transparent 42%,
+    rgba(56, 189, 248, 0.35)
+  );
+  opacity: 0.35;
+  filter: blur(14px);
+  transition: opacity $transition-fast;
+  pointer-events: none;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: $shadow-card-hover;
-  border-color: #cbd5e1;
+  border-color: $color-border-glow;
   color: inherit;
   text-decoration: none;
 }
 
+.project-card:hover::before {
+  opacity: 0.75;
+}
+
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
   flex-shrink: 0;
-  background: $color-page-wash;
+  background: $color-slide-frame;
+  border-bottom: 1px solid $color-border;
 }
 
 .project-info {
@@ -181,17 +256,18 @@ $transition-fast: 0.2s ease;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  background: $color-surface;
 }
 
 .project-info h3 {
   margin: 0 0 0.4rem;
   font-family: $font-ui;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.3;
-  color: $color-accent;
+  color: $color-text;
   letter-spacing: -0.015em;
-  min-height: calc(1.08rem * 1.3 * 2);
+  min-height: calc(1.05rem * 1.3 * 2);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -234,6 +310,7 @@ $transition-fast: 0.2s ease;
 .tool-badge {
   background: $color-badge-bg;
   color: $color-badge-text;
+  border: 1px solid rgba(94, 234, 212, 0.22);
   padding: 0.22rem 0.55rem;
   border-radius: $radius-pill;
   font-family: $font-ui;
@@ -244,14 +321,11 @@ $transition-fast: 0.2s ease;
   white-space: nowrap;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/// Project detail pages
 .project-page {
-  max-width: 80vw;
+  max-width: 1100px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1rem 1.25rem 2.5rem;
   font-family: $font-ui;
   color: $color-text;
 }
@@ -263,7 +337,7 @@ html {
 
 .project-header h1 {
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -289,44 +363,52 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1.05rem;
   border-radius: $radius-card;
-  color: #fff !important;
   text-decoration: none;
   font-family: $font-ui;
   font-weight: 600;
   font-size: 0.9rem;
-  box-shadow: $shadow-card;
-  transition: background $transition-fast, transform $transition-fast, box-shadow $transition-fast;
+  border: 1px solid transparent;
+  transition: background $transition-fast, transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast, color $transition-fast;
 }
 
 .project-link-btn:hover {
   transform: translateY(-2px);
-  box-shadow: $shadow-card-hover;
-  color: #fff !important;
 }
 
 .project-link-github {
-  background: #24292f;
+  background: $color-surface-raised;
+  color: $color-text !important;
+  border-color: $color-border;
+  box-shadow: $shadow-panel;
 }
 
 .project-link-github:hover {
-  background: #000;
+  background: #242a35;
+  border-color: $color-border-glow;
+  color: $color-text !important;
+  box-shadow: 0 0 22px rgba(94, 234, 212, 0.2);
 }
 
 .project-link-paper {
-  background: $color-accent;
+  background: $color-btn-solid;
+  color: $color-btn-solid-text !important;
+  box-shadow: 0 0 18px rgba(94, 234, 212, 0.25);
 }
 
 .project-link-paper:hover {
-  background: $color-link;
+  background: #99f6e4;
+  color: $color-btn-solid-text !important;
+  box-shadow: 0 0 28px rgba(94, 234, 212, 0.4);
 }
 
 .project-logo {
   max-width: 200px;
   border-radius: $radius-card;
   margin-bottom: 1rem;
-  box-shadow: $shadow-card;
+  box-shadow: 0 0 24px rgba(94, 234, 212, 0.18);
+  border: 1px solid $color-border;
 }
 
 .project-about {
@@ -335,19 +417,20 @@ html {
   border-radius: $radius-card;
   margin-bottom: 2rem;
   color: $color-text;
-  box-shadow: $shadow-card;
   background: $color-surface;
   border: 1px solid $color-border;
+  box-shadow: $shadow-panel, 0 0 24px rgba(94, 234, 212, 0.08);
 }
 
 .project-about h2 {
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   letter-spacing: -0.02em;
+  border-bottom: none;
 }
 
 .project-tools-projectpage {
-  color: $color-text-muted;
+  color: $color-accent;
   font-family: $font-ui;
   font-size: 0.95rem;
 }
@@ -358,7 +441,7 @@ html {
   font-family: $font-ui;
 }
 
-// PROJECT MEDIA IMAGES/VIDEOS
+// PROJECT MEDIA
 .project-media {
   display: flex;
   justify-content: center;
@@ -375,7 +458,7 @@ html {
   height: 180px;
   border-radius: $radius-card;
   object-fit: cover;
-  box-shadow: $shadow-card;
+  box-shadow: $shadow-panel, 0 0 18px rgba(94, 234, 212, 0.1);
   border: 1px solid $color-border;
 }
 
@@ -394,16 +477,16 @@ html {
   background: $color-slide-frame;
 }
 
-// POWERPOINT SLIDES — fixed frame so Prev/Next does not shove the page
+// SLIDES — fixed frame
 .project-presentation {
-  max-width: 80%;
+  max-width: 90%;
   margin: 2rem auto;
   text-align: center;
 }
 
 .project-presentation h2 {
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
 }
 
 .slides-container {
@@ -414,7 +497,7 @@ html {
   border-radius: $radius-card;
   overflow: hidden;
   border: 1px solid $color-border;
-  box-shadow: $shadow-card;
+  box-shadow: $shadow-panel, 0 0 28px rgba(94, 234, 212, 0.1);
 }
 
 .slide {
@@ -434,21 +517,24 @@ html {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: $radius-card;
-  border: none;
-  background: $color-accent;
-  color: #fff;
+  border: 1px solid $color-border-glow;
+  background: $color-surface-raised;
+  color: $color-accent;
   font-family: $font-ui;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background $transition-fast, opacity $transition-fast;
+  box-shadow: 0 0 16px rgba(94, 234, 212, 0.15);
+  transition: background $transition-fast, color $transition-fast, box-shadow $transition-fast;
 }
 
 .slide-controls button:hover {
-  background: $color-link;
+  background: $color-accent;
+  color: $color-btn-solid-text;
+  box-shadow: 0 0 24px rgba(94, 234, 212, 0.4);
 }
 
 .slide-controls button:focus {
-  outline: 2px solid $color-link;
+  outline: 2px solid $color-accent;
   outline-offset: 2px;
 }
 
@@ -458,9 +544,9 @@ html {
   color: $color-text-muted;
 }
 
-// PDF VIEWER
+// PDF
 .project-pdfs {
-  max-width: 80%;
+  max-width: 90%;
   margin: 2rem auto;
 }
 
@@ -471,7 +557,7 @@ html {
   background: $color-surface;
   border-radius: $radius-card;
   border: 1px solid $color-border;
-  box-shadow: $shadow-card;
+  box-shadow: $shadow-panel;
 }
 
 .project-pdf:first-child {
@@ -480,7 +566,7 @@ html {
 
 .project-pdf h2 {
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
 }
 
 .project-pdf iframe {
@@ -488,36 +574,38 @@ html {
   border-radius: $radius-card;
   width: 100%;
   height: 600px;
+  background: #fff;
 }
 
 .project-pdf a,
 .pdf-download-btn {
   display: inline-block;
-  background: $color-accent;
-  color: #fff !important;
+  background: $color-btn-solid;
+  color: $color-btn-solid-text !important;
   padding: 0.55rem 1.1rem;
   border-radius: $radius-card;
   text-decoration: none;
   font-family: $font-ui;
-  font-weight: 500;
-  transition: background $transition-fast, transform $transition-fast;
+  font-weight: 600;
+  box-shadow: 0 0 18px rgba(94, 234, 212, 0.25);
+  transition: background $transition-fast, transform $transition-fast, box-shadow $transition-fast;
 }
 
 .project-pdf a:hover,
 .pdf-download-btn:hover {
-  background: $color-link;
+  background: #99f6e4;
   transform: translateY(-2px);
-  color: #fff !important;
+  box-shadow: 0 0 28px rgba(94, 234, 212, 0.45);
+  color: $color-btn-solid-text !important;
 }
 
 .pdf-download-btn:active {
-  background: $color-accent;
   transform: translateY(0);
 }
 
 .pdf-download-btn:focus,
 .project-pdf a:focus {
-  outline: 2px solid $color-link;
+  outline: 2px solid $color-accent;
   outline-offset: 2px;
 }
 
@@ -536,7 +624,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: $shadow-card;
+  box-shadow: $shadow-panel;
   border-radius: $radius-card;
   border: 1px solid $color-border;
   background: $color-surface;
@@ -558,8 +646,9 @@ html {
   overflow-x: auto;
   padding: 1rem;
   border-radius: $radius-card;
-  background-color: #2d2d2d;
-  color: #f8f8f2;
+  background-color: #0b0d10;
+  color: #e8eaed;
+  border: 1px solid $color-border;
   box-sizing: border-box;
 }
 
@@ -568,14 +657,15 @@ html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: $color-accent;
-  border: none;
-  color: #fff;
+  background: $color-surface-raised;
+  border: 1px solid $color-border-glow;
+  color: $color-accent;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: $radius-card;
-  transition: background $transition-fast;
+  box-shadow: 0 0 14px rgba(94, 234, 212, 0.15);
+  transition: background $transition-fast, color $transition-fast;
 }
 
 .snippet-prev {
@@ -590,7 +680,8 @@ html {
 
 .snippet-prev:hover,
 .snippet-next:hover {
-  background: $color-link;
+  background: $color-accent;
+  color: $color-btn-solid-text;
 }
 
 .snippet-title {
@@ -598,10 +689,10 @@ html {
   font-size: 1.1rem;
   text-align: center;
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
 }
 
-/// About me page — full-bleed, side-by-side panels
+/// About me
 .about-avatar-container {
   text-align: center;
   margin-bottom: 2rem;
@@ -612,29 +703,23 @@ html {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: $shadow-card;
+  box-shadow: 0 0 0 2px $color-border-glow, 0 0 32px $color-accent-glow;
   border: 3px solid $color-surface;
 }
 
 .custom-about-wrapper {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  max-width: 100vw;
-  padding: 2.5rem 0 3rem;
-  box-sizing: border-box;
-  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 1.5rem 0 2.5rem;
   font-family: $font-ui;
   color: $color-text;
 }
 
 .custom-about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .custom-about-wrapper h2 {
@@ -643,7 +728,7 @@ html {
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -658,21 +743,22 @@ html {
 .education-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.35rem;
 }
 
 .education-item {
-  flex: 1 1 300px;
+  flex: 1 1 280px;
   padding: 1.5rem;
   border-radius: $radius-card;
   background: $color-surface;
   border: 1px solid $color-border;
-  box-shadow: $shadow-card;
-  transition: transform $transition-fast, box-shadow $transition-fast;
+  box-shadow: $shadow-panel, 0 0 18px rgba(94, 234, 212, 0.06);
+  transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast;
 }
 
 .education-item:hover {
   transform: translateY(-4px);
+  border-color: $color-border-glow;
   box-shadow: $shadow-card-hover;
 }
 
@@ -680,26 +766,26 @@ html {
   margin-top: 0;
   font-size: 1.2em;
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   font-weight: 600;
 }
 
 .education-item p {
   font-size: 1em;
   margin-bottom: 0.5rem;
-  color: $color-text;
+  color: $color-text-muted;
   max-width: none;
 }
 
 .education-item .current-study {
   font-weight: 600;
-  color: $color-link;
+  color: $color-accent;
 }
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
 }
 
 .skills-category {
@@ -707,12 +793,13 @@ html {
   border-radius: $radius-card;
   background: $color-surface;
   border: 1px solid $color-border;
-  box-shadow: $shadow-card;
-  transition: transform $transition-fast, box-shadow $transition-fast;
+  box-shadow: $shadow-panel, 0 0 18px rgba(94, 234, 212, 0.06);
+  transition: transform $transition-fast, box-shadow $transition-fast, border-color $transition-fast;
 }
 
 .skills-category:hover {
   transform: translateY(-4px);
+  border-color: $color-border-glow;
   box-shadow: $shadow-card-hover;
 }
 
@@ -721,7 +808,7 @@ html {
   border-bottom: 1px solid $color-border;
   padding-bottom: 0.5rem;
   font-family: $font-ui;
-  color: $color-accent;
+  color: $color-text;
   font-weight: 600;
 }
 
@@ -733,14 +820,20 @@ html {
 .skills-category li {
   font-size: 1em;
   line-height: 1.6;
-  color: $color-text;
+  color: $color-text-muted;
 }
 
-// Only stack the card grid on genuinely narrow screens
+@media (max-width: 960px) {
+  .project-grid,
+  .skills-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
-  .project-grid {
+  .project-grid,
+  .skills-container {
     grid-template-columns: 1fr;
-    padding: 0 1rem;
     gap: 1rem;
   }
 
@@ -749,16 +842,12 @@ html {
     align-items: center;
     text-align: center;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 1.25rem;
   }
 
   .author-text {
     max-width: 100%;
     flex-basis: auto;
-  }
-
-  .custom-about-content {
-    padding: 0 1rem;
   }
 
   .project-page {
