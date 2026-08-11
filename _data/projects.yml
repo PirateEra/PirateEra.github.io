@@ -40,7 +40,6 @@
     A FastAPI service loads the latest model and exposes /predict plus /metrics.
     Prometheus scrapes API metrics, a drift job pushes PSI scores through Pushgateway, Alertmanager receives alert rules, and Grafana shows the dashboard.
     There is also a minimal Kubernetes Deployment and Service for the API, plus GitHub Actions CI for unit tests and image builds.
-    Code: https://github.com/PirateEra/poker-equity-mlops
   image: "/assets/images/poker-equity-mlops-cover.png"
   url: "/pages/projects/poker-equity-mlops/"
   github-link: https://github.com/PirateEra/poker-equity-mlops

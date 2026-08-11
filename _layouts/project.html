@@ -13,6 +13,14 @@ layout: default
       <h1>{{ project.title }}</h1>
     {% endif %}
     <p class="project-subtitle">{{ project.description }}</p>
+    {% assign github_url = project["github-link"] %}
+    {% if github_url %}
+      <p class="project-github">
+        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+        </a>
+      </p>
+    {% endif %}
   </div>
 
   <div class="project-about">

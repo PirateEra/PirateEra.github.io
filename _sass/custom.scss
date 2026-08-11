@@ -158,6 +158,28 @@ html {
   margin-bottom: 2rem;
 }
 
+.project-github {
+  margin-top: 1rem;
+}
+
+.project-github a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  background: #24292f;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.project-github a:hover {
+  background: #000;
+  color: #fff !important;
+}
+
 .project-logo {
   max-width: 200px;
   border-radius: 12px;
