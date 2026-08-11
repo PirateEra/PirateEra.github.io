@@ -1,31 +1,69 @@
 # Note to self, the first 3 projects will be highlighted
 
-- id: pirate-era
-  date: "2019 - Present"
-  title: "Pirate-Era MMORPG"
-  description: "Solo-developed MMORPG in Minecraft with 30,000+ players, featuring custom plugins, cross-server infrastructure, and data-driven game balancing."
-  tools: "Java | Python | Denizen | MySQL | Redis | Server Administration"
-  about: "Pirate-Era is a full-scale MMORPG built within Minecraft, attracting over 30,000 unique members. As the sole developer since 2019, I am responsible for all aspects of the project, including backend infrastructure, gameplay systems, and development tools. This involved creating custom Java plugins, writing Python scripts for automation and data analysis, and designing all in-game mechanics from scratch. I also self-host the entire project on a dedicated Linux device, managing all security, database, and network setup."
-  image: "/assets/images/pirate-era-cover.png"
-  url: "/pages/projects/pirate-era/"
+- id: msc-thesis-dyadic-gestures
+  date: "01-2026 - 07-2026"
+  title: "Generating Dyadic Context-Aware Gestures for Virtual Avatars via Causal Transformers"
+  description: "MSc thesis at the Max Planck Institute for Psycholinguistics: causal, streaming dyadic co-speech gesture generation with SMPL-H, RVQ-VAE, and multi-GPU cluster training."
+  tools: "Python | PyTorch | DDP | RVQ-VAE | SMPL-H | Transformers | FiLM | Seamless Interaction | LMDB | WandB | Gradio | Pyrender | UV | MPI Cluster | A100"
+  about: >
+    This is my MSc AI thesis research, carried out with the Max Planck Institute for Psycholinguistics in Nijmegen,
+    a well-known research institute for language and multimodal communication.
+    Daily supervision was by Dr. Esam Ghaleb, with university supervision at UvA by Prof. Raquel Fernández.
+    Most co-speech gesture models are monadic and non-causal: they only model one speaker and need future audio.
+    Real conversational agents need dyadic, streaming motion instead.
+    I built a two-stage pipeline on Meta's Seamless Interaction data.
+    Stage 1 is a hierarchical RVQ-VAE on SMPL-H upper-body rotations.
+    Stage 2 is a decoder-only causal transformer conditioned on speaker and partner audio, with FiLM for personality and volume, plus progressive ablations and a custom rendering stack.
+    Scale that mattered in practice: a curated 13.1h high-motion Stage-1 subset, Stage 1 trained ~14h from scratch with DDP on 4× A100, and Stage 2 ~8h on a 150h dyadic subset (200 epochs), all on the MPI computing cluster.
+    The outcome is the full thesis, open code and visuals, and a poster at NCCV 2026.
+  image: "/assets/images/msc-thesis-cover.png"
+  url: "/pages/projects/msc-thesis-dyadic-gestures/"
+  github-link: https://github.com/PirateEra/mpi-thesis
+  project-page-link: https://pirateera.github.io/thesis-project-page/
+  project_pdf_title: "MSc Thesis"
+  project_pdf: "/assets/pdfs/msc-thesis.pdf"
+  poster_pdf_title: "NCCV 2026 Poster"
+  poster_pdf: "/assets/pdfs/msc-thesis-nccv-poster.pdf"
   contributions:
-    Infrastructure & Backend:
-      - "Built a cross-server player system using Redis to sync player data (levels, skills, inventory) across lobbies, enabling scaling across multiple server."
-      - "Self-hosted the project on a dedicated Linux device, managing all server security, network configuration, and database (MySQL/Redis) administration."
-    Data-Driven Balancing & Tooling:
-      - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills."
-      - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/boss-texture-tool/)"
-    Modular Gameplay Systems:
-      - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding."
-      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool."
-      - "Wrote a dynamic, template-based dialogue system for creating NPC interactions through a simple menu interface."
-    Features & UI:
-      - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/bounty-poster-system/)"
-      - "Implemented a custom HUD shader to display a unique, non-vanilla interface on the player's client. [Read More](/pages/projects/custom-hud-shader/)"
-      - "Created an in game wiki that auto-generates documentation for items, quests, and systems by parsing the server code."
+    "Research skills (what MPI / thesis work trains)":
+      - "**Research problem framing:** turned a messy SOTA landscape into clear gaps (monadic vs dyadic, beat vs semantic, non-causal vs causal) and wrote concrete research questions (RQ1–RQ4) with measurable objectives."
+      - "**Literature → method:** mapped related work (SemTalk, DyaDiT, EMAGE, diffusion/flow models, and others) into design choices rather than copying a single paper end-to-end."
+      - "**Dataset science / experimental hygiene:** designed algorithmic curation for noisy multi-vendor dyadic data (hand boundary filtering, motion-intensity thresholding, VAD padding, role-adaptive speaking/listening segmentation) so models train on signal, not tracking junk."
+      - "**Hypothesis-driven modeling:** two-stage discrete motion tokens plus causal generation. Tested whether continuous personality and partner audio actually help via progressive ablations (timing/VAD → semantics → persona → full dyadic loop)."
+      - "**Quantitative evaluation design:** Fréchet distance, motion diversity, beat consistency. Monadic vs dyadic setups. Short (10s) vs long (30s) clips for stability."
+      - "**Qualitative scientific judgment:** built fast visual loops because MSE alone lies for motion. Audited reconstructions, listening poses, and tracking-artifact denoising by eye."
+      - "**Scientific communication:** full MSc thesis writing, contribution claims, limitations honesty, and NCCV 2026 poster presentation with the research community at the Max Planck Institute for Psycholinguistics setting."
+      - "**Independent research ownership:** end-to-end ownership of pipeline, models, eval, and open release intended as a baseline for a new dataset."
+    "ML / systems skills":
+      - "**Deep learning at scale:** multi-stage neural pipelines trained from scratch, not notebook demos."
+      - "**SMPL-H / 3D human motion:** parametric body models, 6D rotations, forward kinematics, vertex losses through a frozen SMPL-H layer."
+      - "**Discrete latent motion (RVQ-VAE):** hierarchical codebooks, commitment loss, dead-code refresh, avoiding codebook collapse. Stage 1 as a spatial denoiser prior."
+      - "**Causal / streaming generation:** decoder-only transformer, zero look-ahead, decoupled Layer-1 AR plus residual fine codes, scheduled sampling / exposure-bias handling, classifier-free guidance."
+      - "**Multimodal conditioning:** HuBERT/BERT-style streams, partner audio, FiLM for personality/volume."
+      - "**Cluster computing / long jobs:** MPI computing cluster (SGE), 4× A100 DDP (Stage 1 ~14h / 800 epochs), multi-hour Stage-2 runs, job scripts, `uv` envs, living with long feedback loops."
+      - "**Training ops / monitoring:** Weights & Biases across long runs to iterate toward stable RVQ-VAE and generative behavior."
+      - "**Data engineering at research scale:** Seamless download → multi-worker segmentation → LMDB caches (large `max_gb`), manifests, pair-preserving dyadic mode."
+      - "**Eval & visualization tooling:** metrics scripts plus Gradio / headless Pyrender (EGL) rendering for SMPL-H/SMPL-X as a reusable research contribution."
+    "What I built":
+      - "**Data curation pipeline** for Seamless Interaction (filter → segment → LMDB)."
+      - "**Stage 1 hierarchical RVQ-VAE** on SMPL-H upper body."
+      - "**Stage 2 causal transformer** with dyadic/social conditioning and an ablation suite."
+      - "**Rendering / diagnostics app** (single, dyadic, Stage-1 audit, interactive sampling, LMDB checks)."
+    "What I learned":
+      - "Research is mostly diagnosing failure modes: codebook collapse, exposure bias, silent listening that does not generalize."
+      - "Cluster work needs discipline. Long jobs force careful logging, smaller local checks, and patience with feedback loops."
+      - "Metrics alone are not enough for motion. You need a fast visual loop or you will trust the wrong runs."
+      - "Writing and presenting are part of the skill set, not afterthoughts. The thesis and NCCV poster forced clearer claims and honest limitations."
+    "Scope":
+      - "Research thesis at the Max Planck Institute for Psycholinguistics. Full technical depth lives on the paper site and PDF. This portfolio page sells the skills and setting."
+  presentation_title: "Architecture and NCCV stills"
+  presentation_folder: "/assets/images/projects/msc-thesis/"
   media:
-    - "https://www.youtube.com/watch?v=osgt67R6ag0"
-    - "https://www.youtube.com/watch?v=nzzOIViL7GU"
+    - "/assets/videos/msc-thesis/V03_S0242_I00000502_P1477_comparison-converted.mp4"
+    - "/assets/videos/msc-thesis/V03_S0446_I00000028_P2069_comparison-converted.mp4"
+    - "/assets/videos/msc-thesis/V03_S0526_I00000026_P2085_comparison-converted.mp4"
+    - "/assets/videos/msc-thesis/V03_S1132_I00000105_P3596_comparison-converted.mp4"
+    - "/assets/videos/msc-thesis/V03_S1253_I00000325_P3750_comparison-converted.mp4"
 
 - id: poker-equity-mlops
   date: "08-2026"
@@ -71,6 +109,33 @@
   media:
     - "/assets/images/projects/poker-equity-mlops/grafana.png"
     - "/assets/images/projects/poker-equity-mlops/airflow.png"
+
+- id: pirate-era
+  date: "2019 - Present"
+  title: "Pirate-Era MMORPG"
+  description: "Solo-developed MMORPG in Minecraft with 30,000+ players, featuring custom plugins, cross-server infrastructure, and data-driven game balancing."
+  tools: "Java | Python | Denizen | MySQL | Redis | Server Administration"
+  about: "Pirate-Era is a full-scale MMORPG built within Minecraft, attracting over 30,000 unique members. As the sole developer since 2019, I am responsible for all aspects of the project, including backend infrastructure, gameplay systems, and development tools. This involved creating custom Java plugins, writing Python scripts for automation and data analysis, and designing all in-game mechanics from scratch. I also self-host the entire project on a dedicated Linux device, managing all security, database, and network setup."
+  image: "/assets/images/pirate-era-cover.png"
+  url: "/pages/projects/pirate-era/"
+  contributions:
+    Infrastructure & Backend:
+      - "Built a cross-server player system using Redis to sync player data (levels, skills, inventory) across lobbies, enabling scaling across multiple server."
+      - "Self-hosted the project on a dedicated Linux device, managing all server security, network configuration, and database (MySQL/Redis) administration."
+    Data-Driven Balancing & Tooling:
+      - "Developed a Java-Python bridge to analyze player data, enabling informed, data-driven decisions for balancing classes, the economy, bosses, and skills."
+      - "Wrote a Python tool to automatically generate boss textures from a player skin, removing the need for manual UV mapping. [Read More](/pages/projects/boss-texture-tool/)"
+    Modular Gameplay Systems:
+      - "Designed a modular skill casting system for PVE/PVP, including an in-game tool for creating complex skills without coding."
+      - "Created a modular boss system that utilizes the player skill system, also managed by an in-game configuration tool."
+      - "Wrote a dynamic, template-based dialogue system for creating NPC interactions through a simple menu interface."
+    Features & UI:
+      - "Engineered an automatic bounty poster system using Python to generate bounty posters from player skin data, displayed in-game via Java/Denizen. [Read More](/pages/projects/bounty-poster-system/)"
+      - "Implemented a custom HUD shader to display a unique, non-vanilla interface on the player's client. [Read More](/pages/projects/custom-hud-shader/)"
+      - "Created an in game wiki that auto-generates documentation for items, quests, and systems by parsing the server code."
+  media:
+    - "https://www.youtube.com/watch?v=osgt67R6ag0"
+    - "https://www.youtube.com/watch?v=nzzOIViL7GU"
 
 - id: roger
   title: "Robust AI-Generated Image Detection"
@@ -628,4 +693,3 @@
             return offset;
         }
         ```
-  
