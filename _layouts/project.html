@@ -106,17 +106,23 @@ layout: default
     </div>
   {% endif %}
 
-  <h2>My Contributions</h2>
-  {% for contribution in project.contributions %}
-    {% assign category = contribution[0] %}
-    {% assign items = contribution[1] %}
-    <h3>{{ category }}</h3>
-    <ul>
-      {% for item in items %}
-        <li>{{ item | markdownify }}</li>
+  <section class="project-contributions">
+    <h2>My Contributions</h2>
+    <div class="contribution-categories">
+      {% for contribution in project.contributions %}
+        {% assign category = contribution[0] %}
+        {% assign items = contribution[1] %}
+        <article class="contribution-category">
+          <h3>{{ category }}</h3>
+          <ul>
+            {% for item in items %}
+              <li>{{ item | markdownify }}</li>
+            {% endfor %}
+          </ul>
+        </article>
       {% endfor %}
-    </ul>
-  {% endfor %}
+    </div>
+  </section>
 
   {% if project.code_snippets %}
     <div class="code-snippets">
